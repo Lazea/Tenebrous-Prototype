@@ -9,11 +9,14 @@ public class PlayerCameraLook : MonoBehaviour
     [Header("Params")]
     public float xSensitivity = 100f;
     public float ySensitivity = 100f;
-    public float minYRotation = -90f; // Minimum camera rotation
-    public float maxYRotation = 90f; // Maximum camera rotation
-    public bool invertY = false; // Invert Y axis
+    public float minYRotation = -90f;   // Minimum camera rotation
+    public float maxYRotation = 90f;    // Maximum camera rotation
+    public bool clampXRotation = false; // Toggle body clamping 
+    public float xRotationClamp = 90f;  // Body clamp rotation value
+    public bool invertY = false;        // Invert Y axis
 
     private float xRotation = 0f; // Initial rotation around the X axis
+    private float yRotation = 0f; // Initial rotation around the Y axis
 
     Controls.GameplayActions controls;
 
@@ -23,6 +26,8 @@ public class PlayerCameraLook : MonoBehaviour
             camera = transform;
 
         controls = new Controls().Gameplay;
+
+        yRotation = body.eulerAngles.y;
     }
 
     private void OnEnable()
@@ -49,8 +54,20 @@ public class PlayerCameraLook : MonoBehaviour
         if (invertY)
             mouseY *= -1;
 
-        // Apply rotation to body around the Y axis
-        body.Rotate(Vector3.up * mouseX);
+        if(clampXRotation)
+        {
+            // Calculate new Y rotation, clamped between -xRotationClamp and xRotationClamp
+            yRotation += mouseX;
+            yRotation = Mathf.Clamp(yRotation, -xRotationClamp, xRotationClamp);
+
+            // Apply clamped rotation to body around the Y axis
+            body.localRotation = Quaternion.Euler(0f, yRotation, 0f);
+        }
+        else
+        {
+            // Apply rotation to body around the Y axis
+            body.Rotate(Vector3.up * mouseX);
+        }
 
         // Calculate new X rotation, clamped between minYRotation and maxYRotation
         xRotation -= mouseY;
