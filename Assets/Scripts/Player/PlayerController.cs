@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,12 +10,17 @@ public class PlayerController : MonoBehaviour
 
     Vector3 velocity;
 
+    public float animMoveSmooth = 0.2f;
+
+    // Components
     Rigidbody rb;
     Controls.GameplayActions controls;
+    Animator anim;
 
     private void Awake()
     {
         controls = new Controls().Gameplay;
+        anim = GetComponent<Animator>();
     }
 
     // Start is called before the first frame update
@@ -42,6 +44,24 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 movement = controls.Movement.ReadValue<Vector2>();
         float elevation = controls.Elevation.ReadValue<float>();
+
+        Vector3 animMove = new Vector2(
+            anim.GetFloat("MoveX"),
+            anim.GetFloat("MoveY"));
+        animMove = Vector2.Lerp(
+            animMove,
+            movement,
+            animMoveSmooth);
+        anim.SetFloat("MoveX", animMove.x);
+        anim.SetFloat("MoveY", animMove.y);
+
+        float animElevation = Mathf.Lerp(
+            anim.GetFloat("MoveZ"),
+            elevation,
+            animMoveSmooth);
+        anim.SetFloat("MoveZ", animElevation);
+
+        anim.SetFloat("Speed", animMove.magnitude);
 
         Vector3 _velocity = new Vector3(movement.x, 0f, movement.y);
         _velocity = Camera.main.transform.TransformDirection(_velocity) * speed;

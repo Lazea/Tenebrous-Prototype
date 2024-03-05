@@ -64,18 +64,54 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Switch"",
+                    ""name"": ""Interact"",
                     ""type"": ""Button"",
-                    ""id"": ""12c64545-91a2-47c5-8e40-3b87fae3e640"",
+                    ""id"": ""26c45e54-afb3-40c4-8778-22115d3708b4"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Interact"",
+                    ""name"": ""Switch"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""12c64545-91a2-47c5-8e40-3b87fae3e640"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Switch0"",
                     ""type"": ""Button"",
-                    ""id"": ""26c45e54-afb3-40c4-8778-22115d3708b4"",
+                    ""id"": ""0638b8f4-ef07-4d2c-8750-d9f95da72fd1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Switch1"",
+                    ""type"": ""Button"",
+                    ""id"": ""97119b49-c447-4fa3-9444-9edeafac3b59"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Switch2"",
+                    ""type"": ""Button"",
+                    ""id"": ""0815141e-df1c-4223-83e7-918056600443"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Switch3"",
+                    ""type"": ""Button"",
+                    ""id"": ""d68c5177-3488-4db2-94c6-ea9614b39361"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -162,17 +198,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""3b02cf52-1312-4065-8af0-45707c8d809b"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Switch"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""40b35999-14d3-4c6a-b980-a96b55355716"",
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
@@ -247,6 +272,83 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""Elevation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""26245686-7a64-42a7-b6ff-5300d97e7548"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Switch"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""5bfb0fab-7429-44a6-b38e-8e978da71f51"",
+                    ""path"": ""<Mouse>/scroll/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Switch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""b8de1955-72bc-4cb9-98f0-7da4d57580a2"",
+                    ""path"": ""<Mouse>/scroll/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Switch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8353f498-c995-4bbd-8423-42181d6677dd"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Switch0"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4e070341-0299-45c7-86f5-fd0e41db0ba2"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Switch1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a084af01-cbcc-4b42-8acc-6f2893cb08ed"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Switch2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f41dd3aa-0919-4f62-bc28-0d2cacf01801"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Switch3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -436,6 +538,45 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""App"",
+            ""id"": ""c5653564-f885-4ccd-bec5-e93e48c12253"",
+            ""actions"": [
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""7647e81d-7f2c-4d83-85f8-3529230a627b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""61952353-d1b9-44ef-b56a-2def4042dbe9"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""53e41187-d1f5-4403-ace0-5bf185d726a2"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -446,14 +587,21 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Gameplay_Movement = m_Gameplay.FindAction("Movement", throwIfNotFound: true);
         m_Gameplay_Elevation = m_Gameplay.FindAction("Elevation", throwIfNotFound: true);
         m_Gameplay_Action = m_Gameplay.FindAction("Action", throwIfNotFound: true);
-        m_Gameplay_Switch = m_Gameplay.FindAction("Switch", throwIfNotFound: true);
         m_Gameplay_Interact = m_Gameplay.FindAction("Interact", throwIfNotFound: true);
+        m_Gameplay_Switch = m_Gameplay.FindAction("Switch", throwIfNotFound: true);
+        m_Gameplay_Switch0 = m_Gameplay.FindAction("Switch0", throwIfNotFound: true);
+        m_Gameplay_Switch1 = m_Gameplay.FindAction("Switch1", throwIfNotFound: true);
+        m_Gameplay_Switch2 = m_Gameplay.FindAction("Switch2", throwIfNotFound: true);
+        m_Gameplay_Switch3 = m_Gameplay.FindAction("Switch3", throwIfNotFound: true);
         // SubGameplay
         m_SubGameplay = asset.FindActionMap("SubGameplay", throwIfNotFound: true);
         m_SubGameplay_Look = m_SubGameplay.FindAction("Look", throwIfNotFound: true);
         m_SubGameplay_Movement = m_SubGameplay.FindAction("Movement", throwIfNotFound: true);
         m_SubGameplay_Elevation = m_SubGameplay.FindAction("Elevation", throwIfNotFound: true);
         m_SubGameplay_ExitPilot = m_SubGameplay.FindAction("ExitPilot", throwIfNotFound: true);
+        // App
+        m_App = asset.FindActionMap("App", throwIfNotFound: true);
+        m_App_Pause = m_App.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -519,8 +667,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Movement;
     private readonly InputAction m_Gameplay_Elevation;
     private readonly InputAction m_Gameplay_Action;
-    private readonly InputAction m_Gameplay_Switch;
     private readonly InputAction m_Gameplay_Interact;
+    private readonly InputAction m_Gameplay_Switch;
+    private readonly InputAction m_Gameplay_Switch0;
+    private readonly InputAction m_Gameplay_Switch1;
+    private readonly InputAction m_Gameplay_Switch2;
+    private readonly InputAction m_Gameplay_Switch3;
     public struct GameplayActions
     {
         private @Controls m_Wrapper;
@@ -529,8 +681,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_Gameplay_Movement;
         public InputAction @Elevation => m_Wrapper.m_Gameplay_Elevation;
         public InputAction @Action => m_Wrapper.m_Gameplay_Action;
-        public InputAction @Switch => m_Wrapper.m_Gameplay_Switch;
         public InputAction @Interact => m_Wrapper.m_Gameplay_Interact;
+        public InputAction @Switch => m_Wrapper.m_Gameplay_Switch;
+        public InputAction @Switch0 => m_Wrapper.m_Gameplay_Switch0;
+        public InputAction @Switch1 => m_Wrapper.m_Gameplay_Switch1;
+        public InputAction @Switch2 => m_Wrapper.m_Gameplay_Switch2;
+        public InputAction @Switch3 => m_Wrapper.m_Gameplay_Switch3;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -552,12 +708,24 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Action.started += instance.OnAction;
             @Action.performed += instance.OnAction;
             @Action.canceled += instance.OnAction;
-            @Switch.started += instance.OnSwitch;
-            @Switch.performed += instance.OnSwitch;
-            @Switch.canceled += instance.OnSwitch;
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
+            @Switch.started += instance.OnSwitch;
+            @Switch.performed += instance.OnSwitch;
+            @Switch.canceled += instance.OnSwitch;
+            @Switch0.started += instance.OnSwitch0;
+            @Switch0.performed += instance.OnSwitch0;
+            @Switch0.canceled += instance.OnSwitch0;
+            @Switch1.started += instance.OnSwitch1;
+            @Switch1.performed += instance.OnSwitch1;
+            @Switch1.canceled += instance.OnSwitch1;
+            @Switch2.started += instance.OnSwitch2;
+            @Switch2.performed += instance.OnSwitch2;
+            @Switch2.canceled += instance.OnSwitch2;
+            @Switch3.started += instance.OnSwitch3;
+            @Switch3.performed += instance.OnSwitch3;
+            @Switch3.canceled += instance.OnSwitch3;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -574,12 +742,24 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Action.started -= instance.OnAction;
             @Action.performed -= instance.OnAction;
             @Action.canceled -= instance.OnAction;
-            @Switch.started -= instance.OnSwitch;
-            @Switch.performed -= instance.OnSwitch;
-            @Switch.canceled -= instance.OnSwitch;
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
+            @Switch.started -= instance.OnSwitch;
+            @Switch.performed -= instance.OnSwitch;
+            @Switch.canceled -= instance.OnSwitch;
+            @Switch0.started -= instance.OnSwitch0;
+            @Switch0.performed -= instance.OnSwitch0;
+            @Switch0.canceled -= instance.OnSwitch0;
+            @Switch1.started -= instance.OnSwitch1;
+            @Switch1.performed -= instance.OnSwitch1;
+            @Switch1.canceled -= instance.OnSwitch1;
+            @Switch2.started -= instance.OnSwitch2;
+            @Switch2.performed -= instance.OnSwitch2;
+            @Switch2.canceled -= instance.OnSwitch2;
+            @Switch3.started -= instance.OnSwitch3;
+            @Switch3.performed -= instance.OnSwitch3;
+            @Switch3.canceled -= instance.OnSwitch3;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -667,14 +847,64 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         }
     }
     public SubGameplayActions @SubGameplay => new SubGameplayActions(this);
+
+    // App
+    private readonly InputActionMap m_App;
+    private List<IAppActions> m_AppActionsCallbackInterfaces = new List<IAppActions>();
+    private readonly InputAction m_App_Pause;
+    public struct AppActions
+    {
+        private @Controls m_Wrapper;
+        public AppActions(@Controls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Pause => m_Wrapper.m_App_Pause;
+        public InputActionMap Get() { return m_Wrapper.m_App; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(AppActions set) { return set.Get(); }
+        public void AddCallbacks(IAppActions instance)
+        {
+            if (instance == null || m_Wrapper.m_AppActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_AppActionsCallbackInterfaces.Add(instance);
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
+        }
+
+        private void UnregisterCallbacks(IAppActions instance)
+        {
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
+        }
+
+        public void RemoveCallbacks(IAppActions instance)
+        {
+            if (m_Wrapper.m_AppActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IAppActions instance)
+        {
+            foreach (var item in m_Wrapper.m_AppActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_AppActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public AppActions @App => new AppActions(this);
     public interface IGameplayActions
     {
         void OnLook(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
         void OnElevation(InputAction.CallbackContext context);
         void OnAction(InputAction.CallbackContext context);
-        void OnSwitch(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnSwitch(InputAction.CallbackContext context);
+        void OnSwitch0(InputAction.CallbackContext context);
+        void OnSwitch1(InputAction.CallbackContext context);
+        void OnSwitch2(InputAction.CallbackContext context);
+        void OnSwitch3(InputAction.CallbackContext context);
     }
     public interface ISubGameplayActions
     {
@@ -682,5 +912,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnElevation(InputAction.CallbackContext context);
         void OnExitPilot(InputAction.CallbackContext context);
+    }
+    public interface IAppActions
+    {
+        void OnPause(InputAction.CallbackContext context);
     }
 }

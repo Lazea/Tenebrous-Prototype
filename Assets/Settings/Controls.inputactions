@@ -42,18 +42,54 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Switch",
+                    "name": "Interact",
                     "type": "Button",
-                    "id": "12c64545-91a2-47c5-8e40-3b87fae3e640",
+                    "id": "26c45e54-afb3-40c4-8778-22115d3708b4",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Interact",
+                    "name": "Switch",
+                    "type": "PassThrough",
+                    "id": "12c64545-91a2-47c5-8e40-3b87fae3e640",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Switch0",
                     "type": "Button",
-                    "id": "26c45e54-afb3-40c4-8778-22115d3708b4",
+                    "id": "0638b8f4-ef07-4d2c-8750-d9f95da72fd1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Switch1",
+                    "type": "Button",
+                    "id": "97119b49-c447-4fa3-9444-9edeafac3b59",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Switch2",
+                    "type": "Button",
+                    "id": "0815141e-df1c-4223-83e7-918056600443",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Switch3",
+                    "type": "Button",
+                    "id": "d68c5177-3488-4db2-94c6-ea9614b39361",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -140,17 +176,6 @@
                 },
                 {
                     "name": "",
-                    "id": "3b02cf52-1312-4065-8af0-45707c8d809b",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Switch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "40b35999-14d3-4c6a-b980-a96b55355716",
                     "path": "<Keyboard>/e",
                     "interactions": "",
@@ -225,6 +250,83 @@
                     "action": "Elevation",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "26245686-7a64-42a7-b6ff-5300d97e7548",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Switch",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "5bfb0fab-7429-44a6-b38e-8e978da71f51",
+                    "path": "<Mouse>/scroll/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Switch",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "b8de1955-72bc-4cb9-98f0-7da4d57580a2",
+                    "path": "<Mouse>/scroll/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Switch",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "8353f498-c995-4bbd-8423-42181d6677dd",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Switch0",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4e070341-0299-45c7-86f5-fd0e41db0ba2",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Switch1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a084af01-cbcc-4b42-8acc-6f2893cb08ed",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Switch2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f41dd3aa-0919-4f62-bc28-0d2cacf01801",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Switch3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -410,6 +512,45 @@
                     "processors": "",
                     "groups": "",
                     "action": "ExitPilot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "App",
+            "id": "c5653564-f885-4ccd-bec5-e93e48c12253",
+            "actions": [
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "7647e81d-7f2c-4d83-85f8-3529230a627b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "61952353-d1b9-44ef-b56a-2def4042dbe9",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "53e41187-d1f5-4403-ace0-5bf185d726a2",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
