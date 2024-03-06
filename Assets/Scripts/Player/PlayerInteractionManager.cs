@@ -1,16 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using SOGameEventSystem.Events;
 
 public class PlayerInteractionManager : MonoBehaviour
 {
     public float interactionRange = 4f;
     public float interactionRadius = 1.5f;
-    public GameObject interactableObject;
+    public Interactable interactable;
 
     public LayerMask mask;
 
     Controls.GameplayActions controls;
+
+    [Header("Events")]
+    public StringGameEvent onInteractable;
 
     private void Awake()
     {
@@ -47,20 +49,45 @@ public class PlayerInteractionManager : MonoBehaviour
         RaycastHit hit;
         if(Physics.SphereCast(ray, interactionRadius, out hit, interactionRange, mask))
         {
-            interactableObject = hit.collider.gameObject;
-            // TODO: Implement a text msg ui for interaction context
+            interactable = hit.collider.gameObject.GetComponentInParent<Interactable>();
+
+            if(interactable != null)
+            {
+                string contextMsg = "";
+                switch (interactable.interactableType)
+                {
+                    case Interactable.InteractableType.Submarine:
+                        contextMsg = "[E] Enter Submarine";
+                        break;
+                    case Interactable.InteractableType.Mineral:
+                        contextMsg = "Mineral"; // TODO: Assign a mineral name once mineral class exists
+                        break;
+                }
+                onInteractable.Raise(contextMsg);
+            }
         }
         else
         {
-            interactableObject = null;
+            if (interactable != null)
+                onInteractable.Raise("");
+            interactable = null;
         }
     }
 
     public void Interact()
     {
-        if (interactableObject == null)
+        if (interactable == null)
             return;
 
-        // TODO: Implement interact
+        interactable.Interact();
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Vector3 startPoint = Camera.main.transform.position;
+        Vector3 endPoint = startPoint + Camera.main.transform.forward * interactionRange;
+        Gizmos.DrawWireSphere(endPoint, interactionRadius);
+        Gizmos.DrawLine(endPoint, startPoint);
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2696274150220879449}
   - component: {fileID: 8386014247871075704}
   - component: {fileID: 8689407125410918888}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Explosive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,3 +130,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosivePrefab: {fileID: 585671196920550780, guid: 0827ccec5a242534f8df1d83129a6f8f,
     type: 3}
+  spawnRange: 0.55
+  throwSpeed: 5
+  maxAngularVelocity: 10

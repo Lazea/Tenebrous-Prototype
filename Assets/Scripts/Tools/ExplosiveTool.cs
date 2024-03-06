@@ -1,11 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ExplosiveTool : MonoBehaviour
 {
     public GameObject explosivePrefab;
+    public float spawnRange = 0.4f;
+    public float throwSpeed = 1f;
+    public float maxAngularVelocity = 5f;
 
+    // Components
     Controls.GameplayActions controls;
     Animator anim;
 
@@ -36,7 +38,30 @@ public class ExplosiveTool : MonoBehaviour
 
     public void ThrowExplosive()
     {
-        // TODO: Throw explosive prefab
         Debug.Log("Throw Explosive");
+
+        Transform camTransform = Camera.main.transform;
+        Rigidbody explosive = Instantiate(
+            explosivePrefab,
+            camTransform.position + camTransform.forward * spawnRange,
+            camTransform.rotation,
+            null).GetComponent<Rigidbody>();
+
+        Vector3 throwDir = camTransform.forward + Vector3.up * 0.1f;
+        explosive.velocity = throwDir.normalized * throwSpeed;
+
+        Vector3 angularVelocity = Random.insideUnitSphere;
+        angularVelocity += camTransform.up * 0.5f;
+        explosive.angularVelocity = angularVelocity * maxAngularVelocity;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Vector3 startPoint = Camera.main.transform.position;
+        Vector3 endPoint = Camera.main.transform.forward * spawnRange;
+        endPoint += startPoint;
+        Gizmos.DrawLine(startPoint, endPoint);
+        Gizmos.DrawWireSphere(endPoint, 0.1f);
     }
 }

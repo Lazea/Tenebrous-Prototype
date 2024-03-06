@@ -32,7 +32,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8537454330577102105}
-  - {fileID: 8537454330438006747}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -98,38 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee6bfc17a22be684f95993d2f3faa9aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  harpoonProjectilePrefab: {fileID: 0}
---- !u!1 &8537454330438006744
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8537454330438006747}
-  m_Layer: 0
-  m_Name: ProjectileSpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8537454330438006747
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8537454330438006744}
-  m_LocalRotation: {x: -0, y: -0, z: 2.4264695e-24, w: 1}
-  m_LocalPosition: {x: 0, y: 0.158, z: 1.1099999}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6928021198503465171}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  harpoonProjectilePrefab: {fileID: 4722379581535823001, guid: a866d61408c70464aba2b0cf90c5cd37,
+    type: 3}
+  spawnRange: 0.6
 --- !u!1 &8537454330577102110
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,7 +109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8537454330577102105}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: HarpoonPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +124,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8537454330577102110}
   m_LocalRotation: {x: -0, y: -0, z: 2.4264695e-24, w: 1}
-  m_LocalPosition: {x: 0, y: 0.158, z: 0.71000004}
+  m_LocalPosition: {x: 0.012, y: 0.158, z: 1.323}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -173,7 +143,7 @@ GameObject:
   - component: {fileID: 4213309204728744514}
   - component: {fileID: 2065247105411647772}
   - component: {fileID: 68683108273251866}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Harpoon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

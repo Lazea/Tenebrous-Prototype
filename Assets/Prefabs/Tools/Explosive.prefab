@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 415178728400342713}
   - component: {fileID: 281329253283042566}
   - component: {fileID: 8848856152057654230}
-  m_Layer: 0
+  - component: {fileID: 494112364753700026}
+  m_Layer: 9
   m_Name: Explosive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,8 +95,8 @@ Rigidbody:
   m_GameObject: {fileID: 585671196920550780}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0.01
-  m_AngularDrag: 0.05
+  m_Drag: 0.04
+  m_AngularDrag: 1
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -115,3 +116,24 @@ CapsuleCollider:
   m_Height: 0.3293609
   m_Direction: 1
   m_Center: {x: -1.8261142e-27, y: 0.00027629733, z: -0.000000007450581}
+--- !u!114 &494112364753700026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585671196920550780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05618229ba159a141ad10cc101132e1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fuse: 2
+  blastRadius: 4
+  coverMask:
+    serializedVersion: 2
+    m_Bits: 1
+  mask:
+    serializedVersion: 2
+    m_Bits: 456
+  explosionFX: {fileID: 0}

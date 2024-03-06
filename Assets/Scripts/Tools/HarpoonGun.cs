@@ -5,7 +5,9 @@ using UnityEngine;
 public class HarpoonGun : MonoBehaviour
 {
     public GameObject harpoonProjectilePrefab;
+    public float spawnRange = 0.4f;
 
+    // Components
     Controls.GameplayActions controls;
     Animator anim;
 
@@ -42,7 +44,23 @@ public class HarpoonGun : MonoBehaviour
 
     public void ShootHarpoon()
     {
-        // TODO: Shoot harpoon prefab
         Debug.Log("Shoot Harpoon");
+
+        Transform camTransform = Camera.main.transform;
+        Instantiate(
+            harpoonProjectilePrefab,
+            camTransform.position + camTransform.forward * spawnRange,
+            camTransform.rotation,
+            null);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Vector3 startPoint = Camera.main.transform.position;
+        Vector3 endPoint = Camera.main.transform.forward * spawnRange;
+        endPoint += startPoint;
+        Gizmos.DrawLine(startPoint, endPoint);
+        Gizmos.DrawWireSphere(endPoint, 0.1f);
     }
 }

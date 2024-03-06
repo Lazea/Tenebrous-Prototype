@@ -24,13 +24,14 @@ public class PlayerCameraLook : MonoBehaviour
     private float xRotation = 0f; // Initial rotation around the X axis
     private float yRotation = 0f; // Initial rotation around the Y axis
 
+    [Header("Animator")]
+    public Animator anim;
     public float animSwaySmooth = 0.1f;
     Vector3 camRotDelta;
     Vector3 prevCameraWorldRotation;
 
     // Components
     Controls.GameplayActions controls;
-    Animator anim;
 
     private void Awake()
     {
@@ -40,8 +41,6 @@ public class PlayerCameraLook : MonoBehaviour
         controls = new Controls().Gameplay;
 
         yRotation = body.eulerAngles.y;
-
-        anim = GetComponentInParent<Animator>();
 
         prevCameraWorldRotation = camera.rotation.eulerAngles;
     }
@@ -96,6 +95,11 @@ public class PlayerCameraLook : MonoBehaviour
 
     void UpdateAniamtor()
     {
+        if (anim == null)
+        {
+            return;
+        }
+
         camRotDelta = prevCameraWorldRotation - camera.rotation.eulerAngles;
         camRotDelta *= Time.deltaTime;
 

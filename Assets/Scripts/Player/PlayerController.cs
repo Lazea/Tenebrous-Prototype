@@ -21,11 +21,6 @@ public class PlayerController : MonoBehaviour
     {
         controls = new Controls().Gameplay;
         anim = GetComponent<Animator>();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
         rb = GetComponent<Rigidbody>();
     }
 
@@ -39,29 +34,12 @@ public class PlayerController : MonoBehaviour
         controls.Disable();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Vector2 movement = controls.Movement.ReadValue<Vector2>();
         float elevation = controls.Elevation.ReadValue<float>();
 
-        Vector3 animMove = new Vector2(
-            anim.GetFloat("MoveX"),
-            anim.GetFloat("MoveY"));
-        animMove = Vector2.Lerp(
-            animMove,
-            movement,
-            animMoveSmooth);
-        anim.SetFloat("MoveX", animMove.x);
-        anim.SetFloat("MoveY", animMove.y);
-
-        float animElevation = Mathf.Lerp(
-            anim.GetFloat("MoveZ"),
-            elevation,
-            animMoveSmooth);
-        anim.SetFloat("MoveZ", animElevation);
-
-        anim.SetFloat("Speed", animMove.magnitude);
+        UpdateAnimator(movement, elevation);
 
         Vector3 _velocity = new Vector3(movement.x, 0f, movement.y);
         _velocity = Camera.main.transform.TransformDirection(_velocity) * speed;
@@ -79,5 +57,26 @@ public class PlayerController : MonoBehaviour
             t);
 
         rb.velocity = velocity;
+    }
+
+    void UpdateAnimator(Vector2 movement, float elevation)
+    {
+        Vector3 animMove = new Vector2(
+            anim.GetFloat("MoveX"),
+            anim.GetFloat("MoveY"));
+        animMove = Vector2.Lerp(
+            animMove,
+            movement,
+            animMoveSmooth);
+        anim.SetFloat("MoveX", animMove.x);
+        anim.SetFloat("MoveY", animMove.y);
+
+        float animElevation = Mathf.Lerp(
+            anim.GetFloat("MoveZ"),
+            elevation,
+            animMoveSmooth);
+        anim.SetFloat("MoveZ", animElevation);
+
+        anim.SetFloat("Speed", animMove.magnitude);
     }
 }
