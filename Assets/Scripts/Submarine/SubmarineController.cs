@@ -12,8 +12,6 @@ public class SubmarineController : MonoBehaviour
 
     [Header("Rotation Limits")]
     public float maxXRotation = 25f;
-    //public float maxYRotation = 45f;
-    //public float maxZRotation = 45f;
 
     [Header("Alignment Torque")]
     public float alignmentStrength = 10f;   // How strongly the sub realigns to original rotation
@@ -85,8 +83,6 @@ public class SubmarineController : MonoBehaviour
     {
         Vector3 currentRotation = transform.localEulerAngles;
         currentRotation.x = ClampAngle(currentRotation.x, maxXRotation);
-        //currentRotation.y = ClampAngle(currentRotation.y, maxYRotation);
-        //currentRotation.z = ClampAngle(currentRotation.z, maxZRotation);
 
         rb.MoveRotation(Quaternion.Euler(currentRotation));
     }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using SOGameEventSystem.Events;
+using UnityEngine.Events;
 
 public class PlayerInteractionManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PlayerInteractionManager : MonoBehaviour
 
     [Header("Events")]
     public StringGameEvent onInteractable;
+    public UnityEvent<Interactable> onInteractableInRange = new UnityEvent<Interactable>();
 
     private void Awake()
     {
@@ -64,12 +66,16 @@ public class PlayerInteractionManager : MonoBehaviour
                         break;
                 }
                 onInteractable.Raise(contextMsg);
+                onInteractableInRange.Invoke(interactable);
             }
         }
         else
         {
             if (interactable != null)
+            {
                 onInteractable.Raise("");
+                onInteractableInRange.Invoke(null);
+            }
             interactable = null;
         }
     }

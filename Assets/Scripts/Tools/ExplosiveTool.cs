@@ -1,11 +1,13 @@
 using UnityEngine;
 
-public class ExplosiveTool : MonoBehaviour
+public class ExplosiveTool : MonoBehaviour, ITool
 {
     public GameObject explosivePrefab;
     public float spawnRange = 0.4f;
     public float throwSpeed = 1f;
     public float maxAngularVelocity = 5f;
+
+    public ToolType ToolType { get { return ToolType.Explosive; } }
 
     // Components
     Controls.GameplayActions controls;

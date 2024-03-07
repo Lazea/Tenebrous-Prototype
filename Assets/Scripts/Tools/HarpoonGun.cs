@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HarpoonGun : MonoBehaviour
+public class HarpoonGun : MonoBehaviour, ITool
 {
     public GameObject harpoonProjectilePrefab;
     public float spawnRange = 0.4f;
+
+    public ToolType ToolType { get { return ToolType.Harpoon; } }
 
     // Components
     Controls.GameplayActions controls;

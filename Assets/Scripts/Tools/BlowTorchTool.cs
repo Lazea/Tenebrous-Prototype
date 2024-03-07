@@ -1,15 +1,23 @@
 using UnityEngine;
+using SOGameEventSystem.Events;
+using UnityEngine.Events;
 
-public class BlowTorchTool : MonoBehaviour
+public class BlowTorchTool : MonoBehaviour, ITool
 {
     [Header("Stats")]
+    public int repairAmount = 5;
     public float torchRange = 1f;
     public float torchRadius = 0.2f;
     public LayerMask mask;
 
     bool useTorch;
 
-    GameObject objectTorched;
+    public Submarine submarine;
+
+    public ToolType ToolType { get { return ToolType.BlowTorch; } }
+
+    [Header("Events")]
+    public UnityEvent onRepair;
 
     // Components
     Controls.GameplayActions controls;
@@ -39,6 +47,7 @@ public class BlowTorchTool : MonoBehaviour
         controls.Disable();
         useTorch = false;
         anim.SetBool("BlowTorching", false);
+        submarine = null;
     }
 
     // Update is called once per frame
@@ -49,7 +58,7 @@ public class BlowTorchTool : MonoBehaviour
 
     private void FixedUpdate()
     {
-        GameObject _objectTorched = null;
+        Submarine _submarine = null;
         if (animStateInfo.IsName("BlowTorching"))
         {
             Ray ray = new Ray(
@@ -63,21 +72,29 @@ public class BlowTorchTool : MonoBehaviour
                 torchRange,
                 mask))
             {
-                _objectTorched = hit.collider.gameObject;
+                if(hit.collider.gameObject != null)
+                {
+                    _submarine = hit.collider.gameObject.GetComponent<Submarine>();
+                }
                 // TODO: Play a torch particle effect on submarine if hit
             }
         }
 
-        objectTorched = _objectTorched;
+        submarine = _submarine;
     }
 
     public void Repair()
     {
-        if (objectTorched == null)
-            return;
-
-        // TODO: Perform a repair if objectTorched is the submarine
-        Debug.Log("Repair");
+        if (submarine.Health < submarine.MaxHealth)
+        {
+            submarine.Repair(repairAmount);
+            onRepair.Invoke();
+            Debug.LogFormat(
+                "Repair [{0}] {1}/{2}",
+                repairAmount,
+                submarine.Health,
+                submarine.MaxHealth);
+        }
     }
 
     private void OnDrawGizmosSelected()

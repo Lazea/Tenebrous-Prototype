@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DrillTool : MonoBehaviour
+public class DrillTool : MonoBehaviour, ITool
 {
     [Header("Stats")]
     public float drillRange = 1f;
@@ -10,6 +10,8 @@ public class DrillTool : MonoBehaviour
     bool useDrill;
 
     GameObject objectDrilled;
+
+    public ToolType ToolType { get { return ToolType.Drill; } }
 
     // Components
     Controls.GameplayActions controls;

@@ -1,10 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Submarine : Interactable
+public class Submarine : Interactable, IDamageable
 {
+    public SubmarineData data;
+
+    public int Health
+    {
+        get => data.hullHealth;
+    }
+    public int MaxHealth
+    {
+        get => data.hullMaxHealth;
+    }
+
+    [Header("Cockpit")]
     public GameObject cockpit;
     public bool playerInControl;
 
@@ -38,6 +48,7 @@ public class Submarine : Interactable
         controls.Disable();
     }
 
+    #region [Player Enter/Exit Control]
     public void PlayerExit()
     {
         if (!playerInControl)
@@ -64,4 +75,44 @@ public class Submarine : Interactable
         playerInControl = true;
         onPlayerEnter.Invoke();
     }
+    #endregion
+
+    #region [Damage]
+    public void DealDamage(GameObject damageSource, int damage)
+    {
+        data.hullHealth = Mathf.Max(
+            0,
+            data.hullHealth - damage);
+
+        if(data.hullHealth <= 0)
+        {
+            Kill();
+        }
+    }
+
+    [ContextMenu("Deal 10 Damage")]
+    void Deal10Damage()
+    {
+        DealDamage(null, 10);
+    }
+
+    [ContextMenu("Deal 50 Damage")]
+    void Deal50Damage()
+    {
+        DealDamage(null, 50);
+    }
+
+    public void Repair(int repairAmount)
+    {
+        data.hullHealth = Mathf.Min(
+            data.hullHealth + repairAmount,
+            data.hullMaxHealth);
+    }
+
+    [ContextMenu("Kill")]
+    public void Kill()
+    {
+        Destroy(gameObject);
+    }
+    #endregion
 }

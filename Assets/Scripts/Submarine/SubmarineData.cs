@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+[System.Serializable]
 public class SubmarineData
 {
-    public int hull = 100;
+    public int hullMaxHealth = 100;
+    public int hullHealth = 100;
+    public int hullLevel = 1;
 }

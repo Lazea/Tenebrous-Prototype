@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerToolsManager : MonoBehaviour
 {
@@ -27,6 +28,9 @@ public class PlayerToolsManager : MonoBehaviour
     public BlowTorchTool blowTorchTool;
     public HarpoonGun harpoonGun;
     public ExplosiveTool explosiveTool;
+
+    [Header("Events")]
+    public UnityEvent<ITool> onToolSwitch = new UnityEvent<ITool>();
 
     private void Awake()
     {
@@ -116,6 +120,8 @@ public class PlayerToolsManager : MonoBehaviour
 
         currentTool = availableTools[i];
         currentTool.SetActive(true);
+
+        onToolSwitch.Invoke(currentTool.GetComponent<ITool>());
     }
 
     public void SwitchToNextTool()
