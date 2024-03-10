@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a92f600fa15b2f340beb01aa896bf00b, type: 3}
   m_Name: SO_Data_Submarine
   m_EditorClassIdentifier: 
-  hullMaxHealth: 100
   hullHealth: 100
+  hullMaxHealth: 100
   hullLevel: 1
   hullMaxLevel: 3
   sonarLevel: 1

@@ -24,8 +24,7 @@ public class SubmarineData : ScriptableObject
 
     public void ResetData()
     {
-        hullHealth = 100;
-        hullMaxHealth = 100;
+        hullHealth = hullMaxHealth;
         hullLevel = 1;
         sonarLevel = 1;
     }

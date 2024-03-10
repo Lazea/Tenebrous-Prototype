@@ -28,6 +28,7 @@ public class Submarine : Interactable, IDamageable
     public UnityEvent onPlayerExit;
     public BaseGameEvent PlayerEnterSubmarine;
     public BaseGameEvent PlayerExitSubmarine;
+    public BaseGameEvent SubmarineDestroyed;
 
     // Components
     Controls.SubGameplayActions controls;
@@ -40,6 +41,8 @@ public class Submarine : Interactable, IDamageable
 
         controls = new Controls().SubGameplay;
         controls.ExitPilot.performed += ctx => PlayerExit();
+
+        data.hullHealth = data.HullMaxHealth;
     }
 
     private void OnEnable()
@@ -118,9 +121,10 @@ public class Submarine : Interactable, IDamageable
             data.HullMaxHealth);
     }
 
-    [ContextMenu("Kill")]
+    [ContextMenu("Destroy Submarine")]
     public void Kill()
     {
+        SubmarineDestroyed.Raise();
         Destroy(gameObject);
     }
     #endregion

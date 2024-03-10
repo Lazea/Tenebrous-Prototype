@@ -350,8 +350,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Options
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 954e43fe938380b459622236c674560d, type: 2}
+  m_sharedMaterial: {fileID: -1595665012174161390, guid: 954e43fe938380b459622236c674560d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -375,12 +376,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 32
-  m_fontSizeMax: 45
+  m_fontSizeMin: 24
+  m_fontSizeMax: 36
   m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -578,6 +579,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: X Sensitivity
+      objectReference: {fileID: 0}
+    - target: {fileID: 5455034589721015915, guid: 2531377941931be4ab856fb9bb987008,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5455034590292791415, guid: 2531377941931be4ab856fb9bb987008,
         type: 3}
@@ -1022,6 +1028,11 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 28
       objectReference: {fileID: 0}
+    - target: {fileID: 5455034589721015915, guid: 2531377941931be4ab856fb9bb987008,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5455034590292791415, guid: 2531377941931be4ab856fb9bb987008,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1439,6 +1450,11 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 28
       objectReference: {fileID: 0}
+    - target: {fileID: 5455034589721015915, guid: 2531377941931be4ab856fb9bb987008,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5455034590292791415, guid: 2531377941931be4ab856fb9bb987008,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1681,6 +1697,11 @@ PrefabInstance:
       propertyPath: m_text
       value: Master Volume
       objectReference: {fileID: 0}
+    - target: {fileID: 5455034589721015915, guid: 2531377941931be4ab856fb9bb987008,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5455034590292791415, guid: 2531377941931be4ab856fb9bb987008,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1922,6 +1943,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Y Sensitivity
+      objectReference: {fileID: 0}
+    - target: {fileID: 5455034589721015915, guid: 2531377941931be4ab856fb9bb987008,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5455034590292791415, guid: 2531377941931be4ab856fb9bb987008,
         type: 3}

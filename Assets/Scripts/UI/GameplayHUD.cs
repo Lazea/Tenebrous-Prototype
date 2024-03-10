@@ -2,6 +2,7 @@ using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.Rendering.DebugUI;
 
 public class GameplayHUD : Singleton<GameplayHUD>
 {
@@ -19,11 +20,16 @@ public class GameplayHUD : Singleton<GameplayHUD>
     [SerializeField]
     Image healthFillBar;
     public Image HealthFillBar { get { return healthFillBar; } }
+    float targetHealthFill;
 
     [Header("O2 Bar")]
     [SerializeField]
     Image o2FillBar;
     public Image O2FillBar { get { return o2FillBar; } }
+    float targetO2Fill;
+
+    [Header("Bar Fill Smooth")]
+    public float barFillSmooth;
 
     [Header("Tool Slos")]
     [SerializeField]
@@ -60,6 +66,12 @@ public class GameplayHUD : Singleton<GameplayHUD>
     // Components
     public Animator anim;
 
+    private void Awake()
+    {
+        targetHealthFill = healthFillBar.fillAmount;
+        targetO2Fill = o2FillBar.fillAmount;
+    }
+
     private void OnDisable()
     {
         anim.ResetTrigger("ShowHealthBar");
@@ -70,9 +82,17 @@ public class GameplayHUD : Singleton<GameplayHUD>
     // Update is called once per frame
     void Update()
     {
-
+        healthFillBar.fillAmount = Mathf.Lerp(
+            healthFillBar.fillAmount,
+            targetHealthFill,
+            barFillSmooth);
+        o2FillBar.fillAmount = Mathf.Lerp(
+            o2FillBar.fillAmount,
+            targetO2Fill,
+            barFillSmooth);
     }
 
+    #region [Bars]
     [ContextMenu("Show Health Bar")]
     public void ShowHealthBar()
     {
@@ -111,14 +131,16 @@ public class GameplayHUD : Singleton<GameplayHUD>
 
     public void SetHealthbarValue(float value)
     {
-        healthFillBar.fillAmount = value;
+        targetHealthFill = value;
     }
 
     public void SetO2BarValue(float value)
     {
-        o2FillBar.fillAmount = value;
+        targetO2Fill = value;
     }
+    #endregion
 
+    #region[Tool Slots]
     public void UpdateToolSlots(ITool[] tools)
     {
         drillToolSlot.toolSlotTransform.gameObject.SetActive(false);
@@ -190,4 +212,5 @@ public class GameplayHUD : Singleton<GameplayHUD>
 
         ShowToolSlotsBar();
     }
+    #endregion
 }

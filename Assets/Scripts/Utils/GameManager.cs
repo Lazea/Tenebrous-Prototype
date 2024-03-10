@@ -83,6 +83,7 @@ public class GameManager : Singleton<GameManager>
         gameStartEvent.Raise();
     }
 
+    [ContextMenu("Reload Game")]
     public void ReloadGame()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
