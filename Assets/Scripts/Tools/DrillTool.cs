@@ -3,6 +3,7 @@ using UnityEngine;
 public class DrillTool : MonoBehaviour, ITool
 {
     [Header("Stats")]
+    public int damage = 5;
     public float drillRange = 1f;
     public float drillRadius = 0.2f;
     public LayerMask mask;
@@ -78,8 +79,9 @@ public class DrillTool : MonoBehaviour, ITool
         if (objectDrilled == null)
             return;
 
-        // TODO: Perform a drill action as in damage enemies or mine mineral based on objectDrilled
-        Debug.Log("Drill");
+        var damageable = objectDrilled.GetComponent<IDamageable>();
+        damageable.DealDamage(transform.gameObject, damage);
+        Debug.LogFormat("Drilling {0}", objectDrilled.name);
     }
 
     private void OnDrawGizmosSelected()

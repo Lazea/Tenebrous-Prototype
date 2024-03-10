@@ -45,6 +45,7 @@ public class PlayerInteractionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        interactable = null;
         Ray ray = new Ray(
             Camera.main.transform.position,
             Camera.main.transform.forward);
@@ -52,32 +53,9 @@ public class PlayerInteractionManager : MonoBehaviour
         if(Physics.SphereCast(ray, interactionRadius, out hit, interactionRange, mask))
         {
             interactable = hit.collider.gameObject.GetComponentInParent<Interactable>();
+        }
 
-            if(interactable != null)
-            {
-                string contextMsg = "";
-                switch (interactable.interactableType)
-                {
-                    case Interactable.InteractableType.Submarine:
-                        contextMsg = "[E] Enter Submarine";
-                        break;
-                    case Interactable.InteractableType.Mineral:
-                        contextMsg = "Mineral"; // TODO: Assign a mineral name once mineral class exists
-                        break;
-                }
-                onInteractable.Raise(contextMsg);
-                onInteractableInRange.Invoke(interactable);
-            }
-        }
-        else
-        {
-            if (interactable != null)
-            {
-                onInteractable.Raise("");
-                onInteractableInRange.Invoke(null);
-            }
-            interactable = null;
-        }
+        onInteractableInRange.Invoke(interactable);
     }
 
     public void Interact()

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerUINotifier : MonoBehaviour
@@ -7,12 +5,16 @@ public class PlayerUINotifier : MonoBehaviour
     public Interactable interactable;
     public ToolType currentToolType;
 
-    public CircleFill fillCircle;
-
     // Start is called before the first frame update
     void Start()
     {
+        ShowPlayerControlsText();
+    }
 
+    private void OnDisable()
+    {
+        GameplayHUD.Instance.FillCircle.gameObject.SetActive(false);
+        GameplayHUD.Instance.InteractionContext.text = "";
     }
 
     // Update is called once per frame
@@ -22,6 +24,9 @@ public class PlayerUINotifier : MonoBehaviour
         {
             switch(interactable.interactableType)
             {
+                case Interactable.InteractableType.Mineral:
+                    HandleMineralNotification(interactable);
+                    break;
                 case Interactable.InteractableType.Submarine:
                     HandleSubmarineNotification(interactable);
                     break;
@@ -29,7 +34,23 @@ public class PlayerUINotifier : MonoBehaviour
         }
         else
         {
-            fillCircle.gameObject.SetActive(false);
+            GameplayHUD.Instance.FillCircle.gameObject.SetActive(false);
+        }
+    }
+
+    #region [Notification Context Handlers]
+    void HandleMineralNotification(Interactable interactable)
+    {
+        if (currentToolType == ToolType.Drill)
+        {
+            var mineral = interactable.GetComponent<Mineral>();
+            GameplayHUD.Instance.FillCircle.gameObject.SetActive(true);
+            GameplayHUD.Instance.FillCircle.SetFillValue(
+                mineral.Health / (float)mineral.MaxHealth);
+        }
+        else
+        {
+            GameplayHUD.Instance.FillCircle.gameObject.SetActive(false);
         }
     }
 
@@ -37,16 +58,40 @@ public class PlayerUINotifier : MonoBehaviour
     {
         if (currentToolType == ToolType.BlowTorch)
         {
-            var sub = interactable.GetComponent<Submarine>();
-            fillCircle.gameObject.SetActive(true);
-            fillCircle.SetFillValue(sub.Health / (float)sub.MaxHealth);
+            var submarine = interactable.GetComponent<Submarine>();
+            GameplayHUD.Instance.FillCircle.gameObject.SetActive(true);
+            GameplayHUD.Instance.FillCircle.SetFillValue(
+                submarine.Health /
+                (float)submarine.MaxHealth);
         }
         else
         {
-            fillCircle.gameObject.SetActive(false);
+            GameplayHUD.Instance.FillCircle.gameObject.SetActive(false);
         }
     }
 
+    public void SetInteractableContext()
+    {
+        string contextMsg = "";
+        if (interactable != null)
+        {
+            switch (interactable.interactableType)
+            {
+                case Interactable.InteractableType.Submarine:
+                    contextMsg = "[E] Enter Submarine";
+                    break;
+                case Interactable.InteractableType.Mineral:
+                    var mineral = interactable.GetComponent<Mineral>();
+                    contextMsg = mineral.Type.ToString();
+                    break;
+            }
+        }
+
+        GameplayHUD.Instance.InteractionContext.text = contextMsg;
+    }
+    #endregion
+
+    #region [Interactable Setters]
     public void SetInRangeInteractable(Interactable interactable)
     {
         this.interactable = interactable;
@@ -55,5 +100,55 @@ public class PlayerUINotifier : MonoBehaviour
     public void SetPlayerSelectedTool(ITool tool)
     {
         currentToolType = tool.ToolType;
+    }
+    #endregion
+
+    #region [Tool Slots]
+    public void ToolUnlocked(ITool[] tools)
+    {
+        GameplayHUD.Instance.UpdateToolSlots(tools);
+    }
+
+    public void ToolLocked(ITool[] tools)
+    {
+        GameplayHUD.Instance.UpdateToolSlots(tools);
+    }
+
+    public void ToolSwitched(ITool selectedTool)
+    {
+        GameplayHUD.Instance.HandleToolSlotSwitch(selectedTool);
+    }
+    #endregion
+
+    #region [Player Health and Oxygen]
+    public void PlayerHealthChange(float health)
+    {
+        GameplayHUD.Instance.ShowHealthBar();
+        GameplayHUD.Instance.SetHealthbarValue(health);
+    }
+
+    public void PlayerOxygenChange(float oxygen)
+    {
+        GameplayHUD.Instance.SetO2BarValue(oxygen);
+        if(oxygen <= 0.33f)
+        {
+            ShowOxygenMeter();
+        }
+    }
+
+    public void ShowOxygenMeter()
+    {
+        GameplayHUD.Instance.ShowO2Bar();
+    }
+    #endregion
+
+    public void ShowPlayerControlsText()
+    {
+        GameplayHUD.Instance.ShowPlayerContolsText();
+    }
+
+    public void ShowSubmarineControlsText()
+    {
+        GameplayHUD.Instance.ShowSubmarineControlsText();
     }
 }

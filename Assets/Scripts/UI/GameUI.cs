@@ -1,7 +1,9 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class GameUI : MonoBehaviour
 {
+    [Header("UI Panels")]
     public GameObject gameplayPanel;
     public GameObject mainMenuPanel;
     public GameObject pauseMenuPanel;

@@ -31,6 +31,8 @@ public class PlayerToolsManager : MonoBehaviour
 
     [Header("Events")]
     public UnityEvent<ITool> onToolSwitch = new UnityEvent<ITool>();
+    public UnityEvent<ITool[]> onToolUnlock = new UnityEvent<ITool[]>();
+    public UnityEvent<ITool[]> onToolLock = new UnityEvent<ITool[]>();
 
     private void Awake()
     {
@@ -60,6 +62,9 @@ public class PlayerToolsManager : MonoBehaviour
         blowTorchTool = GetComponentInChildren<BlowTorchTool>(true);
         harpoonGun = GetComponentInChildren<HarpoonGun>(true);
         explosiveTool = GetComponentInChildren<ExplosiveTool>(true);
+
+        var _availableTools = ToolsToITools(availableTools);
+        onToolUnlock.Invoke(_availableTools);
     }
 
     private void OnEnable()
@@ -154,11 +159,27 @@ public class PlayerToolsManager : MonoBehaviour
             return;
 
         availableTools.Add(tools[toolIdx]);
+
+        var _availableTools = ToolsToITools(availableTools);
+        onToolUnlock.Invoke(_availableTools);
     }
 
     public void LockTool(int toolIdx)
     {
         availableTools.RemoveAt(toolIdx);
+
+        var _availableTools = ToolsToITools(availableTools);
+        onToolUnlock.Invoke(_availableTools);
+    }
+
+    ITool[] ToolsToITools(List<GameObject> tools)
+    {
+        ITool[] _tools = new ITool[tools.Count];
+        for (int i = 0; i < _tools.Length; i++)
+        {
+            _tools[i] = availableTools[i].GetComponent<ITool>();
+        }
+        return _tools;
     }
 
     [ContextMenu("Unlock Drill")]

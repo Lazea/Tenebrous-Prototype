@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using SOGameEventSystem;
 
 public class Submarine : Interactable, IDamageable
 {
@@ -24,6 +25,8 @@ public class Submarine : Interactable, IDamageable
     [Header("Events")]
     public UnityEvent onPlayerEnter;
     public UnityEvent onPlayerExit;
+    public BaseGameEvent PlayerEnterSubmarine;
+    public BaseGameEvent PlayerExitSubmarine;
 
     // Components
     Controls.SubGameplayActions controls;
@@ -62,6 +65,8 @@ public class Submarine : Interactable, IDamageable
         cockpit.SetActive(false);
 
         onPlayerExit.Invoke();
+        if (PlayerExitSubmarine != null)
+            PlayerExitSubmarine.Raise();
     }
 
     public override void Interact()
@@ -69,11 +74,14 @@ public class Submarine : Interactable, IDamageable
         if (playerInControl)
             return;
 
+        onPlayerEnter.Invoke();
+        if (PlayerEnterSubmarine != null)
+            PlayerEnterSubmarine.Raise();
+
         player.SetActive(false);
         cockpit.SetActive(true);
 
         playerInControl = true;
-        onPlayerEnter.Invoke();
     }
     #endregion
 

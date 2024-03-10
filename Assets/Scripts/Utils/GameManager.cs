@@ -86,6 +86,7 @@ public class GameManager : Singleton<GameManager>
     public void ReloadGame()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        Time.timeScale = 1f;
         SceneManager.LoadScene(currentSceneIndex);
     }
 

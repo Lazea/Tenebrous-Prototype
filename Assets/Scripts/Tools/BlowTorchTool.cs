@@ -85,6 +85,9 @@ public class BlowTorchTool : MonoBehaviour, ITool
 
     public void Repair()
     {
+        if (submarine == null)
+            return;
+
         if (submarine.Health < submarine.MaxHealth)
         {
             submarine.Repair(repairAmount);

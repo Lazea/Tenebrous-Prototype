@@ -97,8 +97,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   repairAmount: 2
-  torchRange: 1.1
+  torchRange: 1
   torchRadius: 0.15
   mask:
     serializedVersion: 2
     m_Bits: 449
+  submarine: {fileID: 0}
+  onRepair:
+    m_PersistentCalls:
+      m_Calls: []
