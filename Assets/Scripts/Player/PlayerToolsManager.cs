@@ -24,10 +24,10 @@ public class PlayerToolsManager : MonoBehaviour
 
     Controls.GameplayActions controls;
     Animator anim;
-    public DrillTool drillTool;
-    public BlowTorchTool blowTorchTool;
-    public HarpoonGun harpoonGun;
-    public ExplosiveTool explosiveTool;
+    DrillTool drillTool;
+    BlowTorchTool blowTorchTool;
+    HarpoonGun harpoonGun;
+    ExplosiveTool explosiveTool;
 
     [Header("Events")]
     public UnityEvent<ITool> onToolSwitch = new UnityEvent<ITool>();

@@ -83,6 +83,7 @@ public class PlayerInventory : MonoBehaviour
             mineralType.ToString());
     }
 
+    #region [Data Reset]
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         ResetInventoryData();
@@ -97,6 +98,7 @@ public class PlayerInventory : MonoBehaviour
     {
         inventoryData.ResetData();
     }
+    #endregion
 
     public void OnDrawGizmos()
     {

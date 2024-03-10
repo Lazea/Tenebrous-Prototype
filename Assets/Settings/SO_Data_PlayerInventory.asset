@@ -18,6 +18,7 @@ MonoBehaviour:
   diamondResourceCount: 0
   drillUnlocked: 1
   drillbitLevel: 1
+  drillbitMaxLevel: 3
   blowTorchUnlocked: 1
   harpoonGunUnlocked: 0
   explosiveUnlocked: 0

@@ -14,6 +14,9 @@ public class PlayerInventoryData : ScriptableObject
     [Header("Tools")]
     public bool drillUnlocked = true;
     public int drillbitLevel = 1;
+    [SerializeField]
+    int drillbitMaxLevel = 3;
+    public int DrillbitMaxLevel { get { return drillbitMaxLevel; } }
     public bool blowTorchUnlocked = true;
     public bool harpoonGunUnlocked = false;
     public bool explosiveUnlocked = false;
@@ -25,9 +28,9 @@ public class PlayerInventoryData : ScriptableObject
         goldResourceCount = 0;
         diamondResourceCount = 0;
 
-        drillUnlocked = false;
+        drillUnlocked = true;
         drillbitLevel = 1;
-        blowTorchUnlocked = false;
+        blowTorchUnlocked = true;
         harpoonGunUnlocked = false;
         explosiveUnlocked = false;
     }

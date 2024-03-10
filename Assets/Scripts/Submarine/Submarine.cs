@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using SOGameEventSystem;
+using UnityEngine.SceneManagement;
 
 public class Submarine : Interactable, IDamageable
 {
@@ -12,7 +13,7 @@ public class Submarine : Interactable, IDamageable
     }
     public int MaxHealth
     {
-        get => data.hullMaxHealth;
+        get => data.HullMaxHealth;
     }
 
     [Header("Cockpit")]
@@ -114,13 +115,30 @@ public class Submarine : Interactable, IDamageable
     {
         data.hullHealth = Mathf.Min(
             data.hullHealth + repairAmount,
-            data.hullMaxHealth);
+            data.HullMaxHealth);
     }
 
     [ContextMenu("Kill")]
     public void Kill()
     {
         Destroy(gameObject);
+    }
+    #endregion
+
+    #region [Data Reset]
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        ResetData();
+    }
+
+    private void OnApplicationQuit()
+    {
+        ResetData();
+    }
+
+    void ResetData()
+    {
+        data.ResetData();
     }
     #endregion
 }

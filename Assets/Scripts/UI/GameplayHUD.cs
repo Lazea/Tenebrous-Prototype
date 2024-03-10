@@ -133,18 +133,22 @@ public class GameplayHUD : Singleton<GameplayHUD>
             {
                 case ToolType.Drill:
                     drillToolSlot.toolSlotTransform.gameObject.SetActive(true);
+                    drillToolSlot.toolSlotTransform.SetSiblingIndex(i);
                     toolSlots[i]= drillToolSlot;
                     break;
                 case ToolType.BlowTorch:
                     blowTorchToolSlot.toolSlotTransform.gameObject.SetActive(true);
+                    blowTorchToolSlot.toolSlotTransform.SetSiblingIndex(i);
                     toolSlots[i] = blowTorchToolSlot;
                     break;
                 case ToolType.Harpoon:
                     harpoonGunToolSlot.toolSlotTransform.gameObject.SetActive(true);
+                    harpoonGunToolSlot.toolSlotTransform.SetSiblingIndex(i);
                     toolSlots[i] = harpoonGunToolSlot;
                     break;
                 case ToolType.Explosive:
                     explosiveToolSlot.toolSlotTransform.gameObject.SetActive(true);
+                    explosiveToolSlot.toolSlotTransform.SetSiblingIndex(i);
                     toolSlots[i] = explosiveToolSlot;
                     break;
             }
