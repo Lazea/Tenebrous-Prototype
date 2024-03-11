@@ -21,6 +21,7 @@ public class SubmarineData : ScriptableObject
     [SerializeField]
     int sonarMaxLevel = 3;
     public int SonarMaxLevel { get { return sonarMaxLevel; } }
+    public float[] sonarRanges;
 
     public void ResetData()
     {

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7968438500675935557}
   m_Layer: 7
   m_Name: Mineral_Iron
-  m_TagString: Untagged
+  m_TagString: Mineral
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

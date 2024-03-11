@@ -58,8 +58,8 @@ public class SubmarineController : MonoBehaviour
 
     void FixedUpdate()
     {
-        LimitRotation();
         ApplyAlignmentTorque();
+        LimitRotation();
         HandleMovement();
     }
 
@@ -83,6 +83,7 @@ public class SubmarineController : MonoBehaviour
     {
         Vector3 currentRotation = transform.localEulerAngles;
         currentRotation.x = ClampAngle(currentRotation.x, maxXRotation);
+        currentRotation.z = ClampAngle(currentRotation.x, 5f);
 
         rb.MoveRotation(Quaternion.Euler(currentRotation));
     }
@@ -93,19 +94,28 @@ public class SubmarineController : MonoBehaviour
         return Mathf.Clamp(angle, -maxAngle, maxAngle);
     }
 
+    public Vector3 desiredRotation;
+    public Vector3 currentRotation;
+    public Vector3 rotationDifference;
+    public Vector3 torque;
+
     void ApplyAlignmentTorque()
     {
-        Vector3 desiredRotation = Vector3.zero; // The target rotation (0, 0, 0)
-        Vector3 currentRotation = transform.localEulerAngles;
+        desiredRotation = Vector3.zero; // The target rotation (0, 0, 0)
+        currentRotation = transform.localEulerAngles;
+        desiredRotation.y = currentRotation.y;
         currentRotation = new Vector3(
             NormalizeAngle(currentRotation.x),
-            0f,
-            0f);
+            currentRotation.y,
+            NormalizeAngle(currentRotation.z));
 
-        Vector3 rotationDifference = desiredRotation - currentRotation;
-        Vector3 torque = rotationDifference * alignmentStrength;
+        rotationDifference = desiredRotation - currentRotation;
+        rotationDifference = Vector3.ClampMagnitude(
+            rotationDifference / 10f, 1f);
 
-        rb.AddTorque(torque);
+        torque = rotationDifference * alignmentStrength;
+
+        rb.AddRelativeTorque(torque);
     }
 
     float NormalizeAngle(float angle)

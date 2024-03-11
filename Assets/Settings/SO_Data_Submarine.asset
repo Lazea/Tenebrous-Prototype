@@ -18,3 +18,7 @@ MonoBehaviour:
   hullMaxLevel: 3
   sonarLevel: 1
   sonarMaxLevel: 3
+  sonarRanges:
+  - 10
+  - 30
+  - 70

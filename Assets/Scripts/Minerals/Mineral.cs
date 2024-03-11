@@ -99,7 +99,7 @@ public class Mineral : Interactable, IDamageable
     }
     #endregion
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Vector3 spawnPoint = transform.position;
         if (mineralChunkSpawnPoint != null)
