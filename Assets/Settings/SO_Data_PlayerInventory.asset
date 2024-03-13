@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee294883d13a8254ba2b4c94ab4dd8f5, type: 3}
   m_Name: SO_Data_PlayerInventory
   m_EditorClassIdentifier: 
-  ironResourceCount: 800
-  quartzResourceCount: 1000
-  goldResourceCount: 1000
-  diamondResourceCount: 990
+  ironResourceCount: 5000
+  quartzResourceCount: 5000
+  goldResourceCount: 5000
+  diamondResourceCount: 5000
+  resetResourcesOnLoad: 0
   drillUnlocked: 1
   drillbitLevel: 1
   drillbitMaxLevel: 3

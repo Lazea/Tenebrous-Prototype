@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    [Header("Damage")]
+    public int damage = 15;
+    public float impactForce = 8f;
+
+    [Header("Lifetime")]
     public float lifetime = 4f;
     public float impactLifeTime = 35f;
     public float launchSpeed = 12f;
@@ -59,16 +64,41 @@ public class Projectile : MonoBehaviour
 
     void Hit(RaycastHit hit)
     {
+        float force = 0f;
+        float hitSpeed = rb.velocity.magnitude / launchSpeed;
+        if (hit.collider.attachedRigidbody != null)
+        {
+            force = Mathf.Clamp(
+                hitSpeed,
+                0.2f, 1f);
+            force *= impactForce;
+            hit.collider.attachedRigidbody.AddForceAtPosition(
+                transform.forward * force,
+                hit.point);
+        }
+
+        int hitDamage = 0;
+        var damageable = hit.collider.GetComponentInParent<IDamageable>();
+        if (damageable != null)
+        {
+            hitDamage = Mathf.RoundToInt(Mathf.Clamp(
+                hitSpeed,
+                0.5f, 1f) * damage);
+            damageable.DealDamage(null, hitDamage);
+        }
+
         Debug.LogFormat(
-            "Projectile {0} hit {1}",
+            "Projectile {0} hit {1}; Dealt {2} damage and applied {3} force",
             gameObject.name,
-            hit.collider.name);
-        // TODO: Deal damage to hit
+            hit.collider.name,
+            hitDamage,
+            force);
 
         CancelInvoke("DestroyMe");
         Destroy(gameObject, impactLifeTime);
 
         transform.position = hit.point;
+        transform.parent = hit.transform;
         Destroy(rb);
         Destroy(this);
     }    

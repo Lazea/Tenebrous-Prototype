@@ -113,10 +113,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ec00b672e32d1149ad5f4cd73094f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 35
+  impactForce: 10
   lifetime: 4
   impactLifeTime: 35
   launchSpeed: 18
   radius: 0.05
   mask:
     serializedVersion: 2
-    m_Bits: 449
+    m_Bits: 2497

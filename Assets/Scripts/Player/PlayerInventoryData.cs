@@ -10,6 +10,7 @@ public class PlayerInventoryData : ScriptableObject
     public int quartzResourceCount;
     public int goldResourceCount;
     public int diamondResourceCount;
+    public bool resetResourcesOnLoad = true;
 
     [Header("Tools")]
     public bool drillUnlocked = true;
@@ -23,10 +24,13 @@ public class PlayerInventoryData : ScriptableObject
 
     public void ResetData()
     {
-        ironResourceCount = 0;
-        quartzResourceCount = 0;
-        goldResourceCount = 0;
-        diamondResourceCount = 0;
+        if(resetResourcesOnLoad)
+        {
+            ironResourceCount = 0;
+            quartzResourceCount = 0;
+            goldResourceCount = 0;
+            diamondResourceCount = 0;
+        }
 
         drillUnlocked = true;
         drillbitLevel = 1;
