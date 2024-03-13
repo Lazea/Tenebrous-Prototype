@@ -214,8 +214,15 @@ public class UpgradeSystem : MonoBehaviour
                     0);
                 Debug.Log(
                     "Updating Upgrade Info Cost for sub hull");
-                HandleSelectedUpgradeResourceCostUI(
-                    submarineHullLevelCost[submarineData.hullLevel - 1]);
+                if (submarineData.hullLevel >= submarineData.HullMaxLevel)
+                {
+                    ClearUpgradeInfo();
+                }
+                else
+                {
+                    HandleSelectedUpgradeResourceCostUI(
+                        submarineHullLevelCost[submarineData.hullLevel - 1]);
+                }
                 break;
             case UpgradeType.SubmarineSonar:
                 upgradeInfoMSG = "Upgrade Submarine Sonar to ";
@@ -236,8 +243,15 @@ public class UpgradeSystem : MonoBehaviour
                     detectables);
                 Debug.Log(
                     "Updating Upgrade Info Cost for sub sonar");
-                HandleSelectedUpgradeResourceCostUI(
-                    submarineSonarLevlCost[submarineData.sonarLevel - 1]);
+                if(submarineData.sonarLevel >= submarineData.SonarMaxLevel)
+                {
+                    ClearUpgradeInfo();
+                }
+                else
+                {
+                    HandleSelectedUpgradeResourceCostUI(
+                        submarineSonarLevlCost[submarineData.sonarLevel - 1]);
+                }
                 break;
             case UpgradeType.Drillbit:
                 upgradeInfoMSG = "Upgrade Drillbit to ";
@@ -249,8 +263,15 @@ public class UpgradeSystem : MonoBehaviour
                     newDrillbitLevel);
                 Debug.Log(
                     "Updating Upgrade Info Cost for drillbit");
-                HandleSelectedUpgradeResourceCostUI(
-                    drillbitLevelCost[playerInventoryData.drillbitLevel - 1]);
+                if (playerInventoryData.drillbitLevel >= playerInventoryData.DrillbitMaxLevel)
+                {
+                    ClearUpgradeInfo();
+                }
+                else
+                {
+                    HandleSelectedUpgradeResourceCostUI(
+                        drillbitLevelCost[playerInventoryData.drillbitLevel - 1]);
+                }
                 break;
             case UpgradeType.HarpoonGun:
                 upgradeInfoMSG = "Unlock the Harpoon Gun\n";
@@ -450,51 +471,46 @@ public class UpgradeSystem : MonoBehaviour
     [ContextMenu("Upgrade Submarine Hull Level")]
     public void UpgradeSubmarineHull()
     {
+        SpendResource(submarineHullLevelCost[submarineData.hullLevel - 1].resourceCosts);
         submarineData.hullLevel = Mathf.Min(
             submarineData.hullLevel + 1,
             submarineData.HullMaxLevel);
-
-        SpendResource(submarineHullLevelCost[submarineData.hullLevel - 1].resourceCosts);
         submarineHullUpgraded.Raise();
     }
 
     [ContextMenu("Upgrade Submarine Sonar Level")]
     public void UpgradeSubmarineSonar()
     {
+        SpendResource(submarineSonarLevlCost[submarineData.sonarLevel - 1].resourceCosts);
         submarineData.sonarLevel = Mathf.Min(
             submarineData.sonarLevel + 1,
             submarineData.SonarMaxLevel);
-
-        SpendResource(submarineSonarLevlCost[submarineData.sonarLevel - 1].resourceCosts);
         submarineSonarUpgraded.Raise();
     }
 
     [ContextMenu("Upgrade Drillbit Level")]
     public void UpgradeDrillbit()
     {
+        SpendResource(drillbitLevelCost[playerInventoryData.drillbitLevel - 1].resourceCosts);
         playerInventoryData.drillbitLevel = Mathf.Min(
             playerInventoryData.drillbitLevel + 1,
             playerInventoryData.DrillbitMaxLevel);
-
-        SpendResource(drillbitLevelCost[playerInventoryData.drillbitLevel - 1].resourceCosts);
         drillbitUpgraded.Raise();
     }
 
     [ContextMenu("Unlock Harpoon Gun")]
     public void UnlockHarpoonGun()
     {
-        playerInventoryData.harpoonGunUnlocked = true;
-
         SpendResource(harpoonGunCost.resourceCosts);
+        playerInventoryData.harpoonGunUnlocked = true;
         harpoonGunUnlocked.Raise();
     }
 
     [ContextMenu("Unlock Harpoon Gun")]
     public void UnlockExplosive()
     {
-        playerInventoryData.explosiveUnlocked = true;
-
         SpendResource(explosiveCost.resourceCosts);
+        playerInventoryData.explosiveUnlocked = true;
         explosiveUnlocked.Raise();
     }
 

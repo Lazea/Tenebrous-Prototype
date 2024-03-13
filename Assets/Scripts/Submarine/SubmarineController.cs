@@ -75,7 +75,7 @@ public class SubmarineController : MonoBehaviour
         rb.AddForce(forward * movement.y * thrustForce);
         rb.AddForce(Vector3.up * elevation * elevationThrustForce);
 
-        rb.AddTorque(transform.right * -elevation * 0.1f * turnTorque);
+        rb.AddRelativeForce(Vector3.right * -elevation * 0.1f * turnTorque);
         rb.AddTorque(Vector3.up * movement.x * turnTorque);
     }
 

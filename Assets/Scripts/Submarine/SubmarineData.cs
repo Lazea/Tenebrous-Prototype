@@ -15,6 +15,14 @@ public class SubmarineData : ScriptableObject
     [SerializeField]
     int hullMaxLevel = 3;
     public int HullMaxLevel { get { return hullMaxLevel; } }
+    [System.Serializable]
+    public struct HullDepth
+    {
+        public float maxHullDepth;
+        public AnimationCurve hullDamage;
+    }
+    public int maxDepthDamage = 50;
+    public HullDepth[] hullDepths;
 
     [Header("Sonar")]
     public int sonarLevel = 1;

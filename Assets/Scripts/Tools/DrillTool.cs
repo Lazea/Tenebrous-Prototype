@@ -80,7 +80,7 @@ public class DrillTool : MonoBehaviour, ITool
             return;
 
         var damageable = objectDrilled.GetComponent<IDamageable>();
-        damageable.DealDamage(transform.gameObject, damage);
+        damageable?.DealDamage(transform.gameObject, damage);
         Debug.LogFormat("Drilling {0}", objectDrilled.name);
     }
 

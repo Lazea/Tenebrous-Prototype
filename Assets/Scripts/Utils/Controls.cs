@@ -551,6 +551,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToggleCursor"",
+                    ""type"": ""Button"",
+                    ""id"": ""8de18e06-fe90-4edd-98a5-411d4d92e448"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -573,6 +582,17 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5e626282-b484-466a-8860-dee9d477c412"",
+                    ""path"": ""<Keyboard>/slash"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleCursor"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -602,6 +622,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         // App
         m_App = asset.FindActionMap("App", throwIfNotFound: true);
         m_App_Pause = m_App.FindAction("Pause", throwIfNotFound: true);
+        m_App_ToggleCursor = m_App.FindAction("ToggleCursor", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -852,11 +873,13 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_App;
     private List<IAppActions> m_AppActionsCallbackInterfaces = new List<IAppActions>();
     private readonly InputAction m_App_Pause;
+    private readonly InputAction m_App_ToggleCursor;
     public struct AppActions
     {
         private @Controls m_Wrapper;
         public AppActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Pause => m_Wrapper.m_App_Pause;
+        public InputAction @ToggleCursor => m_Wrapper.m_App_ToggleCursor;
         public InputActionMap Get() { return m_Wrapper.m_App; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -869,6 +892,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @ToggleCursor.started += instance.OnToggleCursor;
+            @ToggleCursor.performed += instance.OnToggleCursor;
+            @ToggleCursor.canceled += instance.OnToggleCursor;
         }
 
         private void UnregisterCallbacks(IAppActions instance)
@@ -876,6 +902,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @ToggleCursor.started -= instance.OnToggleCursor;
+            @ToggleCursor.performed -= instance.OnToggleCursor;
+            @ToggleCursor.canceled -= instance.OnToggleCursor;
         }
 
         public void RemoveCallbacks(IAppActions instance)
@@ -916,5 +945,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     public interface IAppActions
     {
         void OnPause(InputAction.CallbackContext context);
+        void OnToggleCursor(InputAction.CallbackContext context);
     }
 }

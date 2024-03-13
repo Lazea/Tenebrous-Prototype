@@ -34,10 +34,20 @@ public class Mineral : Interactable, IDamageable
     public float mineralChunkLaunchExplosionForce = 1f;
     public float mineralChunkLaunchExplosionRadius = 1f;
     public float mineralChunkLaunchMaxAngularSpeed = 1f;
+    Rigidbody[] mineralChunks;
 
     private void Awake()
     {
         interactableType = InteractableType.Mineral;
+    }
+
+    private void Start()
+    {
+        var chunks = transform.Find("Chunks");
+        if (chunks != null)
+        {
+            mineralChunks = chunks.GetComponentsInChildren<Rigidbody>(true);
+        }
     }
 
     #region [Damage]
@@ -85,14 +95,35 @@ public class Mineral : Interactable, IDamageable
         chunk.angularVelocity = Random.insideUnitSphere * mineralChunkLaunchMaxAngularSpeed;
     }
 
+    void ReleaseMineralChunks()
+    {
+        foreach(var chunk in mineralChunks)
+        {
+            chunk.transform.parent = null;
+            chunk.gameObject.SetActive(true);
+            chunk.AddExplosionForce(
+                mineralChunkLaunchExplosionForce,
+                transform.position,
+                mineralChunkLaunchExplosionRadius);
+            chunk.angularVelocity = Random.insideUnitSphere * mineralChunkLaunchMaxAngularSpeed;
+        }
+    }
+
     [ContextMenu("Break Mineral")]
     public void Kill()
     {
         GetComponent<Collider>().enabled = false;
 
-        for(int i = 0; i < mineralChunkCount; i++)
+        if(mineralChunks?.Length > 0)
         {
-            SpawnMineralChunk();
+            ReleaseMineralChunks();
+        }
+        else
+        {
+            for (int i = 0; i < mineralChunkCount; i++)
+            {
+                SpawnMineralChunk();
+            }
         }
 
         Destroy(gameObject);

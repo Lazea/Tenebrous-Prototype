@@ -69,6 +69,12 @@ public class SonarRadarSystem : MonoBehaviour
         InvokeRepeating("SonarPing", 2f, 2f);
     }
 
+    private void OnDisable()
+    {
+        radarScanline.localRotation = Quaternion.identity;
+        CancelInvoke("SonarPing");
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -87,8 +93,14 @@ public class SonarRadarSystem : MonoBehaviour
             {
                 mineralMarkers[i].gameObject.SetActive(true);
                 var (mType, dir, dist) = _minerals[i];
-                Vector3 markerPosition = dir * detectionMarkerUIRadius;
-                markerPosition *= dist / data.sonarRanges[data.sonarLevel - 1];
+                float height = dir.y;   // TODO: Use this for indicating marker elevation
+                dir.y = 0f;
+                dir.Normalize();
+                dir = transform.InverseTransformDirection(dir);
+                dir = new Vector3(dir.x, dir.z, 0f);
+                float normDist = dist / data.sonarRanges[data.sonarLevel - 1];
+
+                Vector3 markerPosition = dir * normDist * detectionMarkerUIRadius;
                 markerPosition.z = 0;
                 mineralMarkers[i].rectTransform.localPosition = markerPosition;
                 mineralMarkers[i].color = mType switch
@@ -126,8 +138,15 @@ public class SonarRadarSystem : MonoBehaviour
     {
         float range = data.sonarRanges[data.sonarLevel - 1];
         List<(Mineral.MineralType, Vector3, float)> _minerals = new List<(Mineral.MineralType, Vector3, float)>();
-        foreach (var m in minerals)
+        for(int i = minerals.Count - 1; i >= 0; i--)
         {
+            var m = minerals[i];
+            if (m == null || m.transform == null)
+            {
+                minerals.RemoveAt(i);
+                continue;
+            }
+
             if (data.sonarLevel == 1)
             {
                 if (m.Type != Mineral.MineralType.Iron)
@@ -140,7 +159,7 @@ public class SonarRadarSystem : MonoBehaviour
                     continue;
             }
 
-            Vector3 disp = transform.position - m.transform.position;
+            Vector3 disp = m.transform.position - transform.position;
             Vector3 dir = disp.normalized;
             float dist = disp.magnitude;
             if (dist <= range)
