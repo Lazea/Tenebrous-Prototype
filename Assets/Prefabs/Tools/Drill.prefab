@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: e947754a2d105e5459db6df95be8844a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fecbd26d02f3ce4fb9851a374042f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 5
   drillRange: 1
   drillRadius: 0.15
   mask:

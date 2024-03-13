@@ -64,8 +64,8 @@ public class SubmarineGauges : MonoBehaviour
     {
         hullHealth = Mathf.Clamp01(data.hullHealth / (float)data.HullMaxHealth);
         float hullHealthRotation = -Mathf.Lerp(
-            hullGaugeStart,
             hullGaugeEnd,
+            hullGaugeStart,
             hullHealth);
         hullStrengthGaugeArm.localRotation = Quaternion.Lerp(
             hullStrengthGaugeArm.localRotation,
