@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
-  drillRange: 1
+  drillRange: 1.25
   drillRadius: 0.15
   mask:
     serializedVersion: 2

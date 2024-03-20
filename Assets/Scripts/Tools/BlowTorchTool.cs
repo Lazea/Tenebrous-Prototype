@@ -1,5 +1,4 @@
 using UnityEngine;
-using SOGameEventSystem.Events;
 using UnityEngine.Events;
 
 public class BlowTorchTool : MonoBehaviour, ITool

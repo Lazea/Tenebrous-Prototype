@@ -97,7 +97,7 @@ public class SonarRadarSystem : MonoBehaviour
             {
                 mineralMarkers[i].gameObject.SetActive(true);
                 var (mType, dir, dist) = _minerals[i];
-                float height = dir.y;   // TODO: Use this for indicating marker elevation
+                float height = dir.y * dist;
                 dir.y = 0f;
                 dir.Normalize();
                 dir = transform.InverseTransformDirection(dir);
@@ -114,10 +114,14 @@ public class SonarRadarSystem : MonoBehaviour
                     Mineral.MineralType.Gold => goldMarkerColor,
                     Mineral.MineralType.Diamond => diamondMarkerColor,
                 };
+                mineralMarkers[i].rectTransform.GetChild(0).gameObject.SetActive(height >= 5f);
+                mineralMarkers[i].rectTransform.GetChild(1).gameObject.SetActive(height <= -5f);
             }
             else
             {
                 mineralMarkers[i].gameObject.SetActive(false);
+                mineralMarkers[i].rectTransform.GetChild(0).gameObject.SetActive(false);
+                mineralMarkers[i].rectTransform.GetChild(1).gameObject.SetActive(false);
             }
         }
 
