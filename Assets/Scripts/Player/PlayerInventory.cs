@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public delegate void PickupMineral();
@@ -13,11 +14,8 @@ public class PlayerInventory : MonoBehaviour
     public float minPickupRange = 0.5f;
     public LayerMask mask;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Events")]
+    public UnityEvent onResourceAdd;
 
     private void OnEnable()
     {
@@ -27,12 +25,6 @@ public class PlayerInventory : MonoBehaviour
     private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void FixedUpdate()
@@ -76,6 +68,8 @@ public class PlayerInventory : MonoBehaviour
                 inventoryData.diamondResourceCount += resourceValue;
                 break;
         }
+
+        onResourceAdd.Invoke();
 
         Debug.LogFormat(
             "Picked up {0} mineral {1}",

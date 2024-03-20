@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3877955672919489252}
   - component: {fileID: 1850181188810233873}
   - component: {fileID: 3564345452772003155}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: GoldOre.Chunk2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,6 +130,7 @@ MonoBehaviour:
   value: 5
   mineralType: 1
   pickupDelayTime: 0.75
+  maxSpeed: 5
 --- !u!1 &1719996404005614966
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,7 +145,7 @@ GameObject:
   - component: {fileID: 157747627621500780}
   - component: {fileID: 2504714762561818650}
   - component: {fileID: 3935213710023423124}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: GoldOre.Chunk3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,6 +261,7 @@ MonoBehaviour:
   value: 5
   mineralType: 1
   pickupDelayTime: 0.75
+  maxSpeed: 3
 --- !u!1 &3943373252669050988
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +276,7 @@ GameObject:
   - component: {fileID: 9102885618915843366}
   - component: {fileID: 7235850823026001562}
   - component: {fileID: 5589037843046120590}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: GoldOre.Chunk1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -390,6 +392,7 @@ MonoBehaviour:
   value: 5
   mineralType: 1
   pickupDelayTime: 0.75
+  maxSpeed: 3
 --- !u!1 &4104807412956945755
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,7 +407,7 @@ GameObject:
   - component: {fileID: 1424824695424787076}
   - component: {fileID: 2755844409054271845}
   - component: {fileID: 902329674877568856}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: GoldOre.Chunk4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,6 +523,7 @@ MonoBehaviour:
   value: 5
   mineralType: 1
   pickupDelayTime: 0.75
+  maxSpeed: 5
 --- !u!1 &5466844120708844643
 GameObject:
   m_ObjectHideFlags: 0

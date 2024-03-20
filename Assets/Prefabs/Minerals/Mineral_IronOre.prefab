@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 2899308592755301571}
   - component: {fileID: 4623637426457589003}
   - component: {fileID: 6605703144057285866}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: IronOre.Chunk4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,6 +166,7 @@ MonoBehaviour:
   value: 5
   mineralType: 0
   pickupDelayTime: 0.75
+  maxSpeed: 5
 --- !u!1 &3278310052827032003
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +181,7 @@ GameObject:
   - component: {fileID: 9130192726524212150}
   - component: {fileID: 2300598237756718451}
   - component: {fileID: 6225481341182963193}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: IronOre.Chunk3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,6 +297,7 @@ MonoBehaviour:
   value: 5
   mineralType: 0
   pickupDelayTime: 0.75
+  maxSpeed: 3
 --- !u!1 &4922531529656129239
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +312,7 @@ GameObject:
   - component: {fileID: 5551494948591715226}
   - component: {fileID: 7492707408118648864}
   - component: {fileID: 4955296914124911127}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: IronOre.Chunk2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,6 +428,7 @@ MonoBehaviour:
   value: 5
   mineralType: 0
   pickupDelayTime: 0.75
+  maxSpeed: 5
 --- !u!1 &5046111019571086948
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,7 +676,7 @@ GameObject:
   - component: {fileID: 1452519980627639050}
   - component: {fileID: 8341698094600247894}
   - component: {fileID: 3313668034557727846}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: IronOre.Chunk5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -789,6 +792,7 @@ MonoBehaviour:
   value: 5
   mineralType: 0
   pickupDelayTime: 0.75
+  maxSpeed: 5
 --- !u!1 &7224025704876492930
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,7 +807,7 @@ GameObject:
   - component: {fileID: 7007609101602168061}
   - component: {fileID: 4704728268543296955}
   - component: {fileID: 484824588673136577}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: IronOre.Chunk1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -919,6 +923,7 @@ MonoBehaviour:
   value: 5
   mineralType: 0
   pickupDelayTime: 0.75
+  maxSpeed: 3
 --- !u!1001 &8598101294542362216
 PrefabInstance:
   m_ObjectHideFlags: 0

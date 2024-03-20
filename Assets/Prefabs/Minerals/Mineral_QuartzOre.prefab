@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 1396903128405452787}
   - component: {fileID: 6868437925651982642}
   - component: {fileID: 9119160718351251135}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: QuartzOre.Chunk5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,6 +167,7 @@ MonoBehaviour:
   value: 5
   mineralType: 3
   pickupDelayTime: 0.75
+  maxSpeed: 3
 --- !u!1 &865346749
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +182,7 @@ GameObject:
   - component: {fileID: 105383277137948168}
   - component: {fileID: 175195822683233963}
   - component: {fileID: 1866556027583644483}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: QuartzOre.Chunk4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,6 +299,7 @@ MonoBehaviour:
   value: 5
   mineralType: 3
   pickupDelayTime: 0.75
+  maxSpeed: 5
 --- !u!1 &1068207892
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,7 +314,7 @@ GameObject:
   - component: {fileID: 7181869916488855664}
   - component: {fileID: 6811649082132907133}
   - component: {fileID: 7786470949047413259}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: QuartzOre.Chunk1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,6 +431,7 @@ MonoBehaviour:
   value: 5
   mineralType: 3
   pickupDelayTime: 0.75
+  maxSpeed: 5
 --- !u!1 &1704761735
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,7 +446,7 @@ GameObject:
   - component: {fileID: 2764996472658114092}
   - component: {fileID: 7467226798933802445}
   - component: {fileID: 114280462476613557}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: QuartzOre.Chunk2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -560,6 +563,7 @@ MonoBehaviour:
   value: 5
   mineralType: 3
   pickupDelayTime: 0.75
+  maxSpeed: 3
 --- !u!1 &1744439491
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,7 +578,7 @@ GameObject:
   - component: {fileID: 4191425389727536422}
   - component: {fileID: 8797740943970532239}
   - component: {fileID: 4702736762340744434}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: QuartzOre.Chunk3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -691,6 +695,7 @@ MonoBehaviour:
   value: 5
   mineralType: 3
   pickupDelayTime: 0.75
+  maxSpeed: 3
 --- !u!1 &1897400231162934772
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,7 +707,7 @@ GameObject:
   - component: {fileID: 1913498883918639201}
   - component: {fileID: 1181972209374857027}
   - component: {fileID: 1259956630120559540}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: QuartzOre.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -785,7 +790,7 @@ GameObject:
   - component: {fileID: 6769358942037647593}
   - component: {fileID: 5857237662041393994}
   - component: {fileID: 2614052131431620672}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: QuartzOre.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -868,7 +873,7 @@ GameObject:
   - component: {fileID: 1045532940176323335}
   - component: {fileID: 2674187657178219649}
   - component: {fileID: 3374055175954265517}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: QuartzOre.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -951,7 +956,7 @@ GameObject:
   - component: {fileID: 1009967869706114886}
   - component: {fileID: 544101213877949395}
   - component: {fileID: 144917008016478200}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: QuartzOre.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1353,7 +1358,7 @@ GameObject:
   - component: {fileID: 3384442370651653136}
   - component: {fileID: 7095645692859363763}
   - component: {fileID: 4284498245564965683}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: QuartzOre.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}

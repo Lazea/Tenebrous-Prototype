@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5297703439476322056}
   - component: {fileID: 6931559697870047000}
   - component: {fileID: 5546781719504396823}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: DiamondOre.Chunk2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,6 +131,7 @@ MonoBehaviour:
   value: 5
   mineralType: 2
   pickupDelayTime: 0.75
+  maxSpeed: 5
 --- !u!1 &200346885
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +181,7 @@ GameObject:
   - component: {fileID: 7699562358680770399}
   - component: {fileID: 2762762709948757733}
   - component: {fileID: 232984020084057958}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: DiamondOre.Chunk1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,6 +298,7 @@ MonoBehaviour:
   value: 5
   mineralType: 2
   pickupDelayTime: 0.75
+  maxSpeed: 3
 --- !u!1 &1679282007
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +313,7 @@ GameObject:
   - component: {fileID: 8019249278244854773}
   - component: {fileID: 8962028577633779862}
   - component: {fileID: 6521371232914387400}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: DiamondOre.Chunk4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -428,6 +430,7 @@ MonoBehaviour:
   value: 5
   mineralType: 2
   pickupDelayTime: 0.75
+  maxSpeed: 3
 --- !u!1 &2122633643
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,7 +445,7 @@ GameObject:
   - component: {fileID: 7773858123473147107}
   - component: {fileID: 5997427557891715147}
   - component: {fileID: 5061465330701041252}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: DiamondOre.Chunk3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -559,6 +562,7 @@ MonoBehaviour:
   value: 5
   mineralType: 2
   pickupDelayTime: 0.75
+  maxSpeed: 5
 --- !u!1 &1820875572069760660
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,7 +574,7 @@ GameObject:
   - component: {fileID: 5802426575144186167}
   - component: {fileID: 6809043537121834779}
   - component: {fileID: 3094518998175722686}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: DiamondOre.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -653,7 +657,7 @@ GameObject:
   - component: {fileID: 2507132431125736158}
   - component: {fileID: 642353884019710313}
   - component: {fileID: 8253052180345452279}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: DiamondOre.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -736,7 +740,7 @@ GameObject:
   - component: {fileID: 6208830847452653123}
   - component: {fileID: 5862007858865586328}
   - component: {fileID: 2791710294213286273}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: DiamondOre.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1138,7 +1142,7 @@ GameObject:
   - component: {fileID: 5259813295023663787}
   - component: {fileID: 7714944712140581657}
   - component: {fileID: 6068965924831285851}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: DiamondOre.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
