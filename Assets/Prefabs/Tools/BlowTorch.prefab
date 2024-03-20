@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   repairAmount: 2
-  torchRange: 1
+  torchRange: 1.15
   torchRadius: 0.15
   mask:
     serializedVersion: 2
