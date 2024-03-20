@@ -26,6 +26,10 @@ public class ToolAudioManager : MonoBehaviour
     public AudioSource movementAudioSource;
     float maxMovementVolume;
 
+    [Header("Resources")]
+    public AudioSource resourceAudioSource;
+    public AudioClip[] resourcePickupClips;
+
     [Header("Rigidbody")]
     public float maxRBSpeed = 4f;
     public Rigidbody rb;
@@ -53,6 +57,16 @@ public class ToolAudioManager : MonoBehaviour
     public void PlayEnterWater()
     {
         soundFXAudioSource.PlayOneShot(enterWaterClip);
+    }
+
+    public void PlayResourcePickup()
+    {
+        if (resourceAudioSource.isPlaying)
+            return;
+
+        int i = Random.Range(0, resourcePickupClips.Length);
+        resourceAudioSource.pitch = Random.Range(0.95f, 1.05f);
+        resourceAudioSource.PlayOneShot(resourcePickupClips[i]);
     }
 
     #region [Tools]

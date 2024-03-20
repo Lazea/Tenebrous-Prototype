@@ -123,7 +123,7 @@ MonoBehaviour:
   radius: 0.05
   mask:
     serializedVersion: 2
-    m_Bits: 2497
+    m_Bits: 10689
   particlesTrail: {fileID: 5402340395333879771}
   particlesOnHit: {fileID: 4249572069747890775}
   particlesOnHitFlesh: {fileID: 0}

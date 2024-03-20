@@ -8,6 +8,7 @@ public class MineralChunk : MonoBehaviour
     [SerializeField]
     Mineral.MineralType mineralType;
     public Mineral.MineralType MineralType {  get { return mineralType; } }
+    public float maxSpeed = 4f;
 
     [Header("Pickup")]
     public float pickupDelayTime;
@@ -48,6 +49,11 @@ public class MineralChunk : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+    }
+
+    private void FixedUpdate()
+    {
+        rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
     }
 
     void SetPickupReady()
