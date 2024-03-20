@@ -70,22 +70,23 @@ PrefabInstance:
     - target: {fileID: 6764357880972859232, guid: 4502008d022ef1c4eb46751d667c8198,
         type: 3}
       propertyPath: m_Name
-      value: CoralFlatRound2
+      value: CoralFlatRound Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6764357880972859232, guid: 4502008d022ef1c4eb46751d667c8198,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 7238426051698341908, guid: 4502008d022ef1c4eb46751d667c8198,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 8346770495786183480, guid: 4502008d022ef1c4eb46751d667c8198,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7573b42efa89cd24fa3b2060228a4f2e, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 135700283857946845, guid: 4502008d022ef1c4eb46751d667c8198, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4502008d022ef1c4eb46751d667c8198, type: 3}

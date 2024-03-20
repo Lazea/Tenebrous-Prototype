@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 125
   m_IsActive: 1
 --- !u!4 &5034700903294078392
 Transform:
@@ -94,14 +94,13 @@ GameObject:
   - component: {fileID: 4524067615509232455}
   - component: {fileID: 2442463891755318639}
   - component: {fileID: 4372736982992880219}
-  - component: {fileID: 2113533690059313143}
   - component: {fileID: 750424137}
   m_Layer: 0
   m_Name: CoralFlat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 125
   m_IsActive: 1
 --- !u!4 &4524067615509232455
 Transform:
@@ -169,19 +168,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2113533690059313143
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7606557663112605514}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.738266, y: 0.80841064, z: 3.2515547}
-  m_Center: {x: -0.030097961, y: 0.034913063, z: 0.8810073}
 --- !u!205 &750424137
 LODGroup:
   m_ObjectHideFlags: 0

@@ -36,6 +36,9 @@ public class Mineral : Interactable, IDamageable
     public float mineralChunkLaunchMaxAngularSpeed = 1f;
     Rigidbody[] mineralChunks;
 
+    [Header("Particle FX")]
+    public ParticleSystem destroyFX;
+
     private void Awake()
     {
         interactableType = InteractableType.Mineral;
@@ -43,6 +46,8 @@ public class Mineral : Interactable, IDamageable
 
     private void Start()
     {
+        health = maxHealth;
+
         var chunks = transform.Find("Chunks");
         if (chunks != null)
         {
@@ -61,18 +66,6 @@ public class Mineral : Interactable, IDamageable
         {
             Kill();
         }
-    }
-
-    [ContextMenu("Deal 10 Damage")]
-    void Deal10Damage()
-    {
-        DealDamage(null, 10);
-    }
-
-    [ContextMenu("Deal 50 Damage")]
-    void Deal50Damage()
-    {
-        DealDamage(null, 50);
     }
 
     void SpawnMineralChunk()
@@ -124,6 +117,12 @@ public class Mineral : Interactable, IDamageable
             {
                 SpawnMineralChunk();
             }
+        }
+
+        if (destroyFX != null)
+        {
+            destroyFX.transform.parent = null;
+            destroyFX.gameObject.SetActive(true);
         }
 
         Destroy(gameObject);

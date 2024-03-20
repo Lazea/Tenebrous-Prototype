@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEditor.Profiling;
 using UnityEngine;
 
 public class Explosive : MonoBehaviour
@@ -36,7 +35,7 @@ public class Explosive : MonoBehaviour
         if(explosionFX != null)
         {
             explosionFX.transform.parent = null;
-            explosionFX.Play();
+            explosionFX.gameObject.SetActive(true);
         }
 
         var hitObject = Physics.OverlapSphere(

@@ -11,14 +11,13 @@ GameObject:
   - component: {fileID: 4618353975084272433}
   - component: {fileID: 5708698875205333699}
   - component: {fileID: 8346770495786183480}
-  - component: {fileID: 135700283857946845}
   - component: {fileID: 1170580366}
   m_Layer: 0
   m_Name: CoralFlatRound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 125
   m_IsActive: 1
 --- !u!4 &4618353975084272433
 Transform:
@@ -86,19 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &135700283857946845
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6764357880972859232}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.4763813, y: 0.45474243, z: 3.4987755}
-  m_Center: {x: -0.07015896, y: -0.004989028, z: 0.73302007}
 --- !u!205 &1170580366
 LODGroup:
   m_ObjectHideFlags: 0
@@ -138,7 +124,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 125
   m_IsActive: 1
 --- !u!4 &595497809323982843
 Transform:

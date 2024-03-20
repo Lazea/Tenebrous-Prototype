@@ -9,10 +9,12 @@ public class DrillTool : MonoBehaviour, ITool
     public LayerMask mask;
 
     bool useDrill;
-
     GameObject objectDrilled;
 
     public ToolType ToolType { get { return ToolType.Drill; } }
+
+    [Header("Particle FX")]
+    public ParticleSystem drillFX;
 
     // Components
     Controls.GameplayActions controls;
@@ -52,6 +54,7 @@ public class DrillTool : MonoBehaviour, ITool
 
     private void FixedUpdate()
     {
+        bool playFX = false;
         GameObject _objectDrilled = null;
         if (animStateInfo.IsName("Drilling"))
         {
@@ -67,9 +70,17 @@ public class DrillTool : MonoBehaviour, ITool
                 mask))
             {
                 _objectDrilled = hit.collider.gameObject;
-                // TODO: Play a drill particle effect based on object hit
+                playFX = true;
+
+                drillFX.transform.position = hit.point;
+                drillFX.transform.rotation = Quaternion.LookRotation(hit.normal, Vector3.up);
             }
         }
+
+        if (playFX && !drillFX.isPlaying)
+            drillFX.Play();
+        else if (!playFX && drillFX.isPlaying)
+            drillFX.Stop();
 
         objectDrilled = _objectDrilled;
     }

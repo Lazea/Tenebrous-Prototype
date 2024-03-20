@@ -1,0 +1,580 @@
+fileFormatVersion: 2
+guid: 0aadd0c52a299e84f9d9a7e50f773aa0
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BubblesAlpha_2
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 1836
+        width: 140
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0699697fb3e7674ca92806c44a3f414
+      internalID: -1012526731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubblesAlpha_3
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 1859
+        width: 70
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c02bbdbec2299db459622eee1b82f556
+      internalID: -1156492272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubblesAlpha_8
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 1664
+        width: 141
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a34c414727b94c64a8f6bad3dd277631
+      internalID: -1950176161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubblesAlpha_21
+      rect:
+        serializedVersion: 2
+        x: 1383
+        y: 1414
+        width: 148
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2dca8306cdc1b947be71da37ef8a3e2
+      internalID: -517927130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubblesAlpha_29
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 1289
+        width: 123
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eae47f89064d5242bcb7aff202ba6cd
+      internalID: 669489008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubblesAlpha_45
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 1063
+        width: 125
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48a05685f60e2a34b9e5bd031f9b8ea6
+      internalID: -1625741115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubblesAlpha_52
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 930
+        width: 133
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4924c0afdada96646ad6c18720304fcc
+      internalID: 1633435669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubblesAlpha_53
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 945
+        width: 54
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb76cbac849f81e4ca3e0d39933f15e5
+      internalID: -1449914037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubblesAlpha_60
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 883
+        width: 70
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17f29967dc117174782b474a9184cd69
+      internalID: -1002571566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubblesAlpha_65
+      rect:
+        serializedVersion: 2
+        x: 1547
+        y: 750
+        width: 125
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f0d9d04591d15144bfe85d5af6b8e6a
+      internalID: -2084636145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubblesAlpha_68
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 563
+        width: 203
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c1f649eee22c0d44833645f53880cb8
+      internalID: 1041490026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubblesAlpha_74
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 570
+        width: 133
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa958d041a11da046bffecd4c7345beb
+      internalID: 81383936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubblesAlpha_76
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 555
+        width: 102
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9beffa673b38b8b4287c7e3b89ba4068
+      internalID: 910850996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubblesAlpha_85
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 242
+        width: 234
+        height: 274
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cf7c5603dbe6cb489e6a0af4f38ab5f
+      internalID: 873349117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubblesAlpha_89
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 258
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5fb28e5d8f310341bd12790541b925f
+      internalID: 1178741375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BubblesAlpha_98
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 242
+        width: 125
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6df108d8ee5426340bfdb7b4988e920b
+      internalID: -503754935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      BubblesAlpha_0: 820198679
+      BubblesAlpha_1: -1848033330
+      BubblesAlpha_10: 1031383819
+      BubblesAlpha_100: -985027268
+      BubblesAlpha_101: 1015523718
+      BubblesAlpha_102: -423243374
+      BubblesAlpha_103: -1418314642
+      BubblesAlpha_104: -898669869
+      BubblesAlpha_105: -1406186046
+      BubblesAlpha_106: 1906691372
+      BubblesAlpha_107: -227280781
+      BubblesAlpha_108: -828209299
+      BubblesAlpha_11: -2134449923
+      BubblesAlpha_12: 2006022596
+      BubblesAlpha_13: -1432710118
+      BubblesAlpha_14: 768814242
+      BubblesAlpha_15: -2069860097
+      BubblesAlpha_16: 1917423640
+      BubblesAlpha_17: -825584059
+      BubblesAlpha_18: 1331410371
+      BubblesAlpha_19: 788084786
+      BubblesAlpha_2: -1012526731
+      BubblesAlpha_20: -142884222
+      BubblesAlpha_21: -517927130
+      BubblesAlpha_22: 1840855927
+      BubblesAlpha_23: -1388138745
+      BubblesAlpha_24: 1966011295
+      BubblesAlpha_25: -1688902176
+      BubblesAlpha_26: 1760125153
+      BubblesAlpha_27: -1833828339
+      BubblesAlpha_28: 2101203836
+      BubblesAlpha_29: 669489008
+      BubblesAlpha_3: -1156492272
+      BubblesAlpha_30: -351119652
+      BubblesAlpha_31: 1558646869
+      BubblesAlpha_32: -69183810
+      BubblesAlpha_33: -1411499072
+      BubblesAlpha_34: -984062525
+      BubblesAlpha_35: -1697266688
+      BubblesAlpha_36: -2140585732
+      BubblesAlpha_37: 1278863997
+      BubblesAlpha_38: 1886458804
+      BubblesAlpha_39: 1417027756
+      BubblesAlpha_4: -1049278440
+      BubblesAlpha_40: -1834518687
+      BubblesAlpha_41: 464177025
+      BubblesAlpha_42: 1029342657
+      BubblesAlpha_43: 1454977790
+      BubblesAlpha_44: -591228342
+      BubblesAlpha_45: -1625741115
+      BubblesAlpha_46: 1778477187
+      BubblesAlpha_47: -381409997
+      BubblesAlpha_48: -404653313
+      BubblesAlpha_49: 164538148
+      BubblesAlpha_5: 1381229396
+      BubblesAlpha_50: 359963707
+      BubblesAlpha_51: -819200337
+      BubblesAlpha_52: 1633435669
+      BubblesAlpha_53: -1449914037
+      BubblesAlpha_54: -1957670557
+      BubblesAlpha_55: 721720318
+      BubblesAlpha_56: -1733883952
+      BubblesAlpha_57: -1228609210
+      BubblesAlpha_58: 89686623
+      BubblesAlpha_59: -1366579169
+      BubblesAlpha_6: -1501912121
+      BubblesAlpha_60: -1002571566
+      BubblesAlpha_61: 1149938902
+      BubblesAlpha_62: 2026600190
+      BubblesAlpha_63: -1545326297
+      BubblesAlpha_64: 240977770
+      BubblesAlpha_65: -2084636145
+      BubblesAlpha_66: -1113723143
+      BubblesAlpha_67: 45876543
+      BubblesAlpha_68: 1041490026
+      BubblesAlpha_69: -1618164301
+      BubblesAlpha_7: 393616839
+      BubblesAlpha_70: -2122192254
+      BubblesAlpha_71: -1268523923
+      BubblesAlpha_72: -1274865851
+      BubblesAlpha_73: 1952190486
+      BubblesAlpha_74: 81383936
+      BubblesAlpha_75: 1189981704
+      BubblesAlpha_76: 910850996
+      BubblesAlpha_77: -1056992515
+      BubblesAlpha_78: -828296816
+      BubblesAlpha_79: 454841246
+      BubblesAlpha_8: -1950176161
+      BubblesAlpha_80: -1603948356
+      BubblesAlpha_81: 470870311
+      BubblesAlpha_82: 1964741057
+      BubblesAlpha_83: 1391858756
+      BubblesAlpha_84: 109173868
+      BubblesAlpha_85: 873349117
+      BubblesAlpha_86: -925261703
+      BubblesAlpha_87: 847067985
+      BubblesAlpha_88: 573405164
+      BubblesAlpha_89: 1178741375
+      BubblesAlpha_9: -127239749
+      BubblesAlpha_90: 445172146
+      BubblesAlpha_91: 1399218551
+      BubblesAlpha_92: 531192901
+      BubblesAlpha_93: -1507416481
+      BubblesAlpha_94: -1675404061
+      BubblesAlpha_95: -1653339957
+      BubblesAlpha_96: -104636685
+      BubblesAlpha_97: -71830888
+      BubblesAlpha_98: -503754935
+      BubblesAlpha_99: -2003142364
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

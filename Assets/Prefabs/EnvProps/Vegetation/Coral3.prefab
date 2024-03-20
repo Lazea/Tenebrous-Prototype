@@ -11,14 +11,13 @@ GameObject:
   - component: {fileID: 6152412250408754697}
   - component: {fileID: 187481608772245032}
   - component: {fileID: 3817457086501746549}
-  - component: {fileID: 3785087361028252662}
   - component: {fileID: 3922810575544850293}
   m_Layer: 0
   m_Name: Coral3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 125
   m_IsActive: 1
 --- !u!4 &6152412250408754697
 Transform:
@@ -86,20 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &3785087361028252662
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 40290732542160567}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.6821987
-  m_Height: 1.9522917
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.71, z: 0}
 --- !u!205 &3922810575544850293
 LODGroup:
   m_ObjectHideFlags: 0
@@ -139,7 +124,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 125
   m_IsActive: 1
 --- !u!4 &7836031861190039507
 Transform:

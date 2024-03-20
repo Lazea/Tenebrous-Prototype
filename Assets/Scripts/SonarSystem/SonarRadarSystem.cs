@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class SonarRadarSystem : MonoBehaviour
@@ -26,6 +27,9 @@ public class SonarRadarSystem : MonoBehaviour
     [Header("World Objects")]
     public List<Mineral> minerals;
     public List<BaseEnemy> enemies;
+
+    [Header("Events")]
+    public UnityEvent onSonarPing;
 
     // Start is called before the first frame update
     void Start()
@@ -66,7 +70,7 @@ public class SonarRadarSystem : MonoBehaviour
 
     private void OnEnable()
     {
-        InvokeRepeating("SonarPing", 2f, 2f);
+        InvokeRepeating("SonarPing", 3f, 3f);
     }
 
     private void OnDisable()
@@ -130,6 +134,8 @@ public class SonarRadarSystem : MonoBehaviour
     {
         List<(Mineral.MineralType, Vector3, float)> _minerals = SonarPingForMinerals();
         List<(Vector3, float)> _enemies = SonarPingForEnemies();
+
+        onSonarPing.Invoke();
 
         UpdateRadarMarkers(_minerals, _enemies);
     }

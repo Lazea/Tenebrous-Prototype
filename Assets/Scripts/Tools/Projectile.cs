@@ -14,6 +14,11 @@ public class Projectile : MonoBehaviour
     Vector3 previousPosition;
     public LayerMask mask;
 
+    [Header("Particcle FX")]
+    public ParticleSystem particlesTrail;
+    public ParticleSystem particlesOnHit;
+    public ParticleSystem particlesOnHitFlesh;
+
     // Components
     Rigidbody rb;
 
@@ -99,6 +104,12 @@ public class Projectile : MonoBehaviour
 
         transform.position = hit.point;
         transform.parent = hit.transform;
+
+        if(particlesOnHit != null)
+        {
+            particlesOnHit.gameObject.SetActive(true);
+        }
+
         Destroy(rb);
         Destroy(this);
     }    
@@ -106,6 +117,16 @@ public class Projectile : MonoBehaviour
     void DestroyMe()
     {
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        if(particlesTrail != null)
+        {
+            particlesTrail.transform.parent = null;
+            var psMain = particlesTrail.main;
+            psMain.loop = false;
+        }
     }
 
     private void OnDrawGizmos()

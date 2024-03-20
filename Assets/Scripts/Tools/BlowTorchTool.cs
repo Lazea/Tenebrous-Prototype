@@ -16,6 +16,9 @@ public class BlowTorchTool : MonoBehaviour, ITool
 
     public ToolType ToolType { get { return ToolType.BlowTorch; } }
 
+    [Header("Particle FX")]
+    public ParticleSystem torchFixFX;
+
     [Header("Events")]
     public UnityEvent onRepair;
 
@@ -58,6 +61,7 @@ public class BlowTorchTool : MonoBehaviour, ITool
 
     private void FixedUpdate()
     {
+        bool playTorchFX = false;
         Submarine _submarine = null;
         if (animStateInfo.IsName("BlowTorching"))
         {
@@ -75,10 +79,19 @@ public class BlowTorchTool : MonoBehaviour, ITool
                 if(hit.collider.gameObject != null)
                 {
                     _submarine = hit.collider.gameObject.GetComponent<Submarine>();
+                    if(_submarine != null)
+                        playTorchFX = true;
                 }
-                // TODO: Play a torch particle effect on submarine if hit
+
+                torchFixFX.transform.position = hit.point;
+                torchFixFX.transform.rotation = Quaternion.LookRotation(hit.normal, Vector3.up);
             }
         }
+
+        if (playTorchFX && !torchFixFX.isPlaying)
+            torchFixFX.Play();
+        else if(!playTorchFX && torchFixFX.isPlaying)
+            torchFixFX.Stop();
 
         submarine = _submarine;
     }
