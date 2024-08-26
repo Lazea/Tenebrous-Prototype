@@ -68,10 +68,13 @@ public class PlayerInteractionManager : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.yellow;
-        Vector3 startPoint = Camera.main.transform.position;
-        Vector3 endPoint = startPoint + Camera.main.transform.forward * interactionRange;
-        Gizmos.DrawWireSphere(endPoint, interactionRadius);
-        Gizmos.DrawLine(endPoint, startPoint);
+        if(Camera.main != null)
+        {
+            Gizmos.color = Color.yellow;
+            Vector3 startPoint = Camera.main.transform.position;
+            Vector3 endPoint = startPoint + Camera.main.transform.forward * interactionRange;
+            Gizmos.DrawWireSphere(endPoint, interactionRadius);
+            Gizmos.DrawLine(endPoint, startPoint);
+        }
     }
 }
